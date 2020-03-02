@@ -1,0 +1,60 @@
+package futuapi
+
+const (
+	GETGLOBALSTATE = 1002 //获取全局状态
+	NOTIFY = 1003 //推送通知
+	QOT_SUB = 3001 //订阅或者反订阅
+	QOT_REGQOTPUSH = 3002 //注册推送
+	QOT_GETSUBINFO = 3003 //获取订阅信息
+	QOT_GETTICKER = 3010 //获取逐笔,调用该接口前需要先订阅(订阅位：Qot_Common.SubType_Ticker)
+	QOT_GETBASICQOT = 3004 //获取基本行情,调用该接口前需要先订阅(订阅位：Qot_Common.SubType_Basic)
+	QOT_GETORDERBOOK = 3012 //获取摆盘,调用该接口前需要先订阅(订阅位：Qot_Common.SubType_OrderBook)
+	QOT_GETKL = 3006 //获取K线，调用该接口前需要先订阅(订阅位：Qot_Common.SubType_KL_XXX)
+	QOT_GETRT = 3008 //获取分时，调用该接口前需要先订阅(订阅位：Qot_Common.SubType_RT)
+	QOT_GETBROKER = 3014 //获取经纪队列，调用该接口前需要先订阅(订阅位：Qot_Common.SubType_Broker)
+	QOT_GETHISTORYKL = 3100 //获取本地历史K线
+	QOT_GETHISTORYKLPOINTS = 3101 //获取多股票多点本地历史K线
+	QOT_GETREHAB = 3102 //获取本地历史复权信息
+	QOT_REQUESTREHAB = 3105 //在线请求历史复权信息，不读本地历史数据DB
+	QOT_REQUESTHISTORYKL = 3103 //在线请求历史K线，不读本地历史数据DB
+	QOT_REQUESTHISTORYKLQUOTA = 3104 //获取历史K线已经用掉的额度
+	QOT_GETTRADEDATE = 3200 //获取交易日
+	QOT_GETSTATICINFO = 3202 //获取静态信息
+	QOT_GETSECURITYSNAPSHOT = 3203 //获取股票快照
+	QOT_GETPLATESET = 3204 //获取板块集合下的板块
+	QOT_GETPLATESECURITY = 3205 //获取板块下的股票
+	QOT_GETREFERENCE = 3206 //获取相关股票
+	QOT_GETOWNERPLATE = 3207 //获取股票所属的板块
+	QOT_GETHOLDINGCHANGELIST = 3208 //获取大股东持股变化列表
+	QOT_GETOPTIONCHAIN = 3209 //筛选期权
+	QOT_GETWARRANT = 3210 //筛选窝轮
+	QOT_GETCAPITALFLOW = 3211 //获取资金流向
+	QOT_GETCAPITALDISTRIBUTION = 3212 //获取资金分布
+	QOT_GETUSERSECURITY = 3213 //获取自选股分组下的股票
+	QOT_MODIFYUSERSECURITY = 3214 //修改自选股分组下的股票
+	QOT_UPDATEBASICQOT = 3005 //推送基本行情
+	QOT_UPDATEKL = 3007 //推送K线
+	QOT_UPDATERT = 3009 //推送分时
+	QOT_UPDATETICKER = 3011 //推送逐笔
+	QOT_UPDATEORDERBOOK	= 3013 //推送买卖盘
+	QOT_UPDATEBROKER = 3015 //推送经纪队列
+	QOT_STOCKFILTER = 3215  //获取条件选股
+	QOT_GETCODECHANGE = 3216   //获取股票代码变化信息
+	QOT_GETIPOLIST = 3217      //获取新股Ipo
+	QOT_GETFUTUREINFO = 3218   //获取期货合约资料
+
+	TRD_GETACCLIST = 2001 //获取交易账户列表
+	TRD_UNLOCKTRADE = 2005 //解锁
+	TRD_SUBACCPUSH = 2008 //订阅接收推送数据的交易账户
+	TRD_GETFUNDS = 2101 //获取账户资金
+	TRD_GETPOSITIONLIST = 2102 //获取账户持仓
+	TRD_GETMAXTRDQTYS = 2111 //获取最大交易数量
+	TRD_GETORDERLIST = 2201 //获取当日订单列表
+	TRD_PLACEORDER = 2202 //下单
+	TRD_MODIFYORDER = 2205 //修改订单
+	TRD_UPDATEORDER = 2208 // 订单状态变动通知(推送)
+	TRD_GETORDERFILLLIST = 2211 //获取当日成交列表
+	TRD_UPDATEORDERFILL	= 2218  //成交通知(推送)
+	TRD_GETHISTORYORDERLIST = 2221 //获取历史订单列表
+	TRD_GETHISTORYORDERFILLLIST = 2222 //获取历史成交列表
+)
