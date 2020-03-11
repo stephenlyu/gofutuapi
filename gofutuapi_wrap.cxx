@@ -407,7 +407,7 @@ void SwigDirector_FTAPIChannel_Callback::OnReply(FTAPIChannelPtr pChannel, FTAPI
   swig_enReqReplyType = (intgo)enReqReplyType; 
   *(FTAPI_ProtoHeader **)&swig_pProtoHeader = (FTAPI_ProtoHeader *)pProtoHeader; 
   
-  swig_pProtoData = Swig_AllocateString((char*)pProtoData, pProtoData ? strlen((char*)pProtoData) : 0);
+  swig_pProtoData = Swig_AllocateString((char*)pProtoData, (size_t) nDataLen);
   
   swig_nDataLen = (Futu::i32_t)nDataLen; 
   Swig_DirectorFTAPIChannel_Callback_callback_OnReply_gofutuapi_b194613f40b0860d(go_val, swig_pChannel, swig_enReqReplyType, swig_pProtoHeader, swig_pProtoData, swig_nDataLen);
@@ -423,7 +423,7 @@ void SwigDirector_FTAPIChannel_Callback::OnPush(FTAPIChannelPtr pChannel, FTAPI_
   *(FTAPIChannelPtr *)&swig_pChannel = (FTAPIChannelPtr)pChannel; 
   *(FTAPI_ProtoHeader **)&swig_pProtoHeader = (FTAPI_ProtoHeader *)pProtoHeader; 
   
-  swig_pProtoData = Swig_AllocateString((char*)pProtoData, pProtoData ? strlen((char*)pProtoData) : 0);
+  swig_pProtoData = Swig_AllocateString((char*)pProtoData, (size_t) nDataLen);
   
   swig_nDataLen = (Futu::i32_t)nDataLen; 
   Swig_DirectorFTAPIChannel_Callback_callback_OnPush_gofutuapi_b194613f40b0860d(go_val, swig_pChannel, swig_pProtoHeader, swig_pProtoData, swig_nDataLen);
