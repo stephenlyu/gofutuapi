@@ -164,8 +164,7 @@ func (conn *FTAPIConnTrdImpl) GetHistoryOrderFillList(req *Trd_GetHistoryOrderFi
 	return conn.SendProto(TRD_GETHISTORYORDERFILLLIST, req)
 }
 
-func (conn *FTAPIConnTrdImpl) OnReply(arg2 uintptr, replyType FTAPI_ReqReplyType, arg4 FTAPI_ProtoHeader, arg5 string) {
-	data := []byte(arg5)
+func (conn *FTAPIConnTrdImpl) OnReply(arg2 uintptr, replyType FTAPI_ReqReplyType, arg4 FTAPI_ProtoHeader, data []byte) {
 	protoID := arg4.GetNProtoID()
 	serialNo := arg4.GetNSerialNo()
 	if (conn.trdSpi == nil) {
@@ -382,7 +381,7 @@ func (conn *FTAPIConnTrdImpl) OnReply(arg2 uintptr, replyType FTAPI_ReqReplyType
 	}
 }
 
-func (conn *FTAPIConnTrdImpl) OnPush(arg2 uintptr, arg3 FTAPI_ProtoHeader, arg4 string) {
+func (conn *FTAPIConnTrdImpl) OnPush(arg2 uintptr, arg3 FTAPI_ProtoHeader, arg4 []byte) {
 	protoID := arg3.GetNProtoID()
 
 	if (conn.trdSpi == nil) {

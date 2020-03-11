@@ -350,8 +350,7 @@ func (conn *FTAPIConnQotImpl) GetFutureInfo(req *Qot_GetFutureInfo.Request) uint
 	return conn.SendProto(QOT_GETFUTUREINFO, req)
 }
 
-func (conn *FTAPIConnQotImpl) OnReply(arg2 uintptr, replyType FTAPI_ReqReplyType, protoHeader FTAPI_ProtoHeader, str string) {
-	data := []byte(str)
+func (conn *FTAPIConnQotImpl) OnReply(arg2 uintptr, replyType FTAPI_ReqReplyType, protoHeader FTAPI_ProtoHeader, data []byte) {
 	protoID := protoHeader.GetNProtoID()
 	serialNo := protoHeader.GetNSerialNo()
 	if (conn.qotSpi == nil) {
@@ -938,7 +937,7 @@ func (conn *FTAPIConnQotImpl) OnReply(arg2 uintptr, replyType FTAPI_ReqReplyType
 	}
 }
 
-func (conn *FTAPIConnQotImpl) OnPush(arg2 uintptr, arg3 FTAPI_ProtoHeader, arg4 string) {
+func (conn *FTAPIConnQotImpl) OnPush(arg2 uintptr, arg3 FTAPI_ProtoHeader, arg4 []byte) {
 	protoID := arg3.GetNProtoID()
 
 	if (conn.qotSpi == nil) {

@@ -8,20 +8,22 @@
   //printf("Initialization gofutuapi done.\n");
 %}
 
-%typemap(gotype) (const Futu::i8_t* pProtoData, Futu::i32_t nDataLen) "string"
+%typemap(gotype) (const Futu::i8_t* pProtoData, Futu::i32_t nDataLen) "[]byte"
 
 %typemap(in) (const Futu::i8_t* pProtoData, Futu::i32_t nDataLen)
 %{
-  $1 = (Futu::i8_t *) malloc($input.n);
-  memcpy($1, $input.p, $input.n);
-  $2 = (Futu::i32_t) $input.n;
+  $1 = (Futu::i8_t*) $input.array;
+  $2 = (Futu::i32_t) $input.len;
 %}
 
-%typemap(freearg) (const Futu::i8_t* pProtoData, Futu::i32_t nDataLen)
+%typemap(directorin) (const Futu::i8_t* pProtoData, Futu::i32_t nDataLen)
 %{
-  {
-    free($1);
-  }
+  $input=Swig_AllocateSlice((void*)$1, $2);
+%}
+
+%typemap(godirectorin) (const Futu::i8_t* pProtoData, Futu::i32_t nDataLen)
+%{
+  $result=swigCopySlice($1);
 %}
 
 
@@ -33,6 +35,16 @@
 %}
 
 %{
+
+static _goslice_ Swig_AllocateSlice(void *p, size_t l) {
+  _goslice_ ret;
+  ret.array = malloc(l);
+  memcpy(ret.array, p, l);
+  ret.len = l;
+  ret.cap = l;
+  return ret;
+}
+
 
 extern "C" void* Wrap_GetCallback(FTAPIChannelPtr pChannel);
 static void FTAPIChannel_OnDisConnectCallback_impl(FTAPIChannelPtr pChannel, Futu::i64_t nErrCode) {
@@ -73,6 +85,15 @@ void wrap_InitializeCallbacks(FTAPIChannelPtr pChannel) {
 %}
 
 %insert(go_wrapper) %{
+
+type swig_goslice struct { array uintptr; len int; cap int }
+func swigCopySlice(s []byte) []byte {
+  p := *(*swig_goslice)(unsafe.Pointer(&s))
+  r := make([]byte, p.len, p.cap)
+  copy(r, []byte((*[0x7fffffff]byte)(unsafe.Pointer(p.array))[:p.len]))
+  Swig_free(p.array)
+  return r
+}
 
 var gChannelCallbacks = make(map[uintptr]FTAPIChannel_Callback)
 
