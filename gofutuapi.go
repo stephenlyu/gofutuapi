@@ -38,66 +38,66 @@ typedef long long swig_type_7;
 typedef _gostring_ swig_type_8;
 typedef _gostring_ swig_type_9;
 typedef _gostring_ swig_type_10;
-extern void _wrap_Swig_free_gofutuapi_d667299e3498665a(uintptr_t arg1);
-extern uintptr_t _wrap_Swig_malloc_gofutuapi_d667299e3498665a(swig_intgo arg1);
-extern void _wrap_FTAPI_ProtoHeader_szHeaderFlag_set_gofutuapi_d667299e3498665a(uintptr_t arg1, swig_voidp arg2);
-extern swig_voidp _wrap_FTAPI_ProtoHeader_szHeaderFlag_get_gofutuapi_d667299e3498665a(uintptr_t arg1);
-extern void _wrap_FTAPI_ProtoHeader_nProtoID_set_gofutuapi_d667299e3498665a(uintptr_t arg1, swig_intgo arg2);
-extern swig_intgo _wrap_FTAPI_ProtoHeader_nProtoID_get_gofutuapi_d667299e3498665a(uintptr_t arg1);
-extern void _wrap_FTAPI_ProtoHeader_nProtoFmtType_set_gofutuapi_d667299e3498665a(uintptr_t arg1, char arg2);
-extern char _wrap_FTAPI_ProtoHeader_nProtoFmtType_get_gofutuapi_d667299e3498665a(uintptr_t arg1);
-extern void _wrap_FTAPI_ProtoHeader_nProtoVer_set_gofutuapi_d667299e3498665a(uintptr_t arg1, char arg2);
-extern char _wrap_FTAPI_ProtoHeader_nProtoVer_get_gofutuapi_d667299e3498665a(uintptr_t arg1);
-extern void _wrap_FTAPI_ProtoHeader_nSerialNo_set_gofutuapi_d667299e3498665a(uintptr_t arg1, swig_intgo arg2);
-extern swig_intgo _wrap_FTAPI_ProtoHeader_nSerialNo_get_gofutuapi_d667299e3498665a(uintptr_t arg1);
-extern void _wrap_FTAPI_ProtoHeader_nBodyLen_set_gofutuapi_d667299e3498665a(uintptr_t arg1, swig_intgo arg2);
-extern swig_intgo _wrap_FTAPI_ProtoHeader_nBodyLen_get_gofutuapi_d667299e3498665a(uintptr_t arg1);
-extern void _wrap_FTAPI_ProtoHeader_arrBodySHA1_set_gofutuapi_d667299e3498665a(uintptr_t arg1, swig_voidp arg2);
-extern swig_voidp _wrap_FTAPI_ProtoHeader_arrBodySHA1_get_gofutuapi_d667299e3498665a(uintptr_t arg1);
-extern void _wrap_FTAPI_ProtoHeader_arrReserved_set_gofutuapi_d667299e3498665a(uintptr_t arg1, swig_voidp arg2);
-extern swig_voidp _wrap_FTAPI_ProtoHeader_arrReserved_get_gofutuapi_d667299e3498665a(uintptr_t arg1);
-extern uintptr_t _wrap_new_FTAPI_ProtoHeader_gofutuapi_d667299e3498665a(void);
-extern void _wrap_delete_FTAPI_ProtoHeader_gofutuapi_d667299e3498665a(uintptr_t arg1);
-extern swig_intgo _wrap_FTAPI_ReqReplyType_SvrReply_gofutuapi_d667299e3498665a(void);
-extern swig_intgo _wrap_FTAPI_ReqReplyType_Timeout_gofutuapi_d667299e3498665a(void);
-extern swig_intgo _wrap_FTAPI_ReqReplyType_DisConnect_gofutuapi_d667299e3498665a(void);
-extern swig_intgo _wrap_FTAPI_InitFailType_Unknow_gofutuapi_d667299e3498665a(void);
-extern swig_intgo _wrap_FTAPI_InitFailType_Timeout_gofutuapi_d667299e3498665a(void);
-extern swig_intgo _wrap_FTAPI_InitFailType_DisConnect_gofutuapi_d667299e3498665a(void);
-extern swig_intgo _wrap_FTAPI_InitFailType_SeriaNoNotMatch_gofutuapi_d667299e3498665a(void);
-extern swig_intgo _wrap_FTAPI_InitFailType_SendInitReqFailed_gofutuapi_d667299e3498665a(void);
-extern swig_intgo _wrap_FTAPI_InitFailType_OpenDReject_gofutuapi_d667299e3498665a(void);
-extern swig_intgo _wrap_FTAPI_ConnectFailType_Unknown_gofutuapi_d667299e3498665a(void);
-extern swig_intgo _wrap_FTAPI_ConnectFailType_None_gofutuapi_d667299e3498665a(void);
-extern swig_intgo _wrap_FTAPI_ConnectFailType_CreateFailed_gofutuapi_d667299e3498665a(void);
-extern swig_intgo _wrap_FTAPI_ConnectFailType_CloseFailed_gofutuapi_d667299e3498665a(void);
-extern swig_intgo _wrap_FTAPI_ConnectFailType_ShutdownFailed_gofutuapi_d667299e3498665a(void);
-extern swig_intgo _wrap_FTAPI_ConnectFailType_GetHostByNameFailed_gofutuapi_d667299e3498665a(void);
-extern swig_intgo _wrap_FTAPI_ConnectFailType_GetHostByNameWrong_gofutuapi_d667299e3498665a(void);
-extern swig_intgo _wrap_FTAPI_ConnectFailType_ConnectFailed_gofutuapi_d667299e3498665a(void);
-extern swig_intgo _wrap_FTAPI_ConnectFailType_BindFailed_gofutuapi_d667299e3498665a(void);
-extern swig_intgo _wrap_FTAPI_ConnectFailType_ListenFailed_gofutuapi_d667299e3498665a(void);
-extern swig_intgo _wrap_FTAPI_ConnectFailType_SelectReturnError_gofutuapi_d667299e3498665a(void);
-extern swig_intgo _wrap_FTAPI_ConnectFailType_SendFailed_gofutuapi_d667299e3498665a(void);
-extern swig_intgo _wrap_FTAPI_ConnectFailType_RecvFailed_gofutuapi_d667299e3498665a(void);
-extern void _wrap_FTAPIChannel_Init_gofutuapi_d667299e3498665a(void);
-extern void _wrap_FTAPIChannel_UnInit_gofutuapi_d667299e3498665a(void);
-extern uintptr_t _wrap_CreateFTAPIChannel_gofutuapi_d667299e3498665a(void);
-extern void _wrap_ReleaseFTAPIChannel_gofutuapi_d667299e3498665a(uintptr_t arg1);
-extern void _wrap_FTAPIChannel_SetClientInfo_gofutuapi_d667299e3498665a(uintptr_t arg1, swig_type_1 arg2, swig_intgo arg3);
-extern void _wrap_FTAPIChannel_SetRSAPrivateKey_gofutuapi_d667299e3498665a(uintptr_t arg1, swig_type_2 arg2);
-extern swig_intgo _wrap_FTAPIChannel_InitConnect_gofutuapi_d667299e3498665a(uintptr_t arg1, swig_type_3 arg2, short arg3, swig_intgo arg4);
-extern swig_type_4 _wrap_FTAPIChannel_GetConnectID_gofutuapi_d667299e3498665a(uintptr_t arg1);
-extern swig_intgo _wrap_FTAPIChannel_SendProto_gofutuapi_d667299e3498665a(uintptr_t arg1, swig_intgo arg2, char arg3, swig_type_5 arg4);
-extern swig_intgo _wrap_FTAPIChannel_Close_gofutuapi_d667299e3498665a(uintptr_t arg1);
-extern void _wrap_wrap_InitializeCallbacks_gofutuapi_d667299e3498665a(uintptr_t arg1);
-extern uintptr_t _wrap__swig_NewDirectorFTAPIChannel_CallbackFTAPIChannel_Callback_gofutuapi_d667299e3498665a(int);
-extern void _wrap_DeleteDirectorFTAPIChannel_Callback_gofutuapi_d667299e3498665a(uintptr_t arg1);
-extern void _wrap_FTAPIChannel_Callback_OnDisConnect_gofutuapi_d667299e3498665a(uintptr_t arg1, uintptr_t arg2, swig_type_6 arg3);
-extern void _wrap_FTAPIChannel_Callback_OnInitConnect_gofutuapi_d667299e3498665a(uintptr_t arg1, uintptr_t arg2, swig_type_7 arg3, swig_type_8 arg4);
-extern void _wrap_FTAPIChannel_Callback_OnReply_gofutuapi_d667299e3498665a(uintptr_t arg1, uintptr_t arg2, swig_intgo arg3, uintptr_t arg4, swig_type_9 arg5);
-extern void _wrap_FTAPIChannel_Callback_OnPush_gofutuapi_d667299e3498665a(uintptr_t arg1, uintptr_t arg2, uintptr_t arg3, swig_type_10 arg4);
-extern void _wrap_delete_FTAPIChannel_Callback_gofutuapi_d667299e3498665a(uintptr_t arg1);
+extern void _wrap_Swig_free_gofutuapi_b194613f40b0860d(uintptr_t arg1);
+extern uintptr_t _wrap_Swig_malloc_gofutuapi_b194613f40b0860d(swig_intgo arg1);
+extern void _wrap_FTAPI_ProtoHeader_szHeaderFlag_set_gofutuapi_b194613f40b0860d(uintptr_t arg1, swig_voidp arg2);
+extern swig_voidp _wrap_FTAPI_ProtoHeader_szHeaderFlag_get_gofutuapi_b194613f40b0860d(uintptr_t arg1);
+extern void _wrap_FTAPI_ProtoHeader_nProtoID_set_gofutuapi_b194613f40b0860d(uintptr_t arg1, swig_intgo arg2);
+extern swig_intgo _wrap_FTAPI_ProtoHeader_nProtoID_get_gofutuapi_b194613f40b0860d(uintptr_t arg1);
+extern void _wrap_FTAPI_ProtoHeader_nProtoFmtType_set_gofutuapi_b194613f40b0860d(uintptr_t arg1, char arg2);
+extern char _wrap_FTAPI_ProtoHeader_nProtoFmtType_get_gofutuapi_b194613f40b0860d(uintptr_t arg1);
+extern void _wrap_FTAPI_ProtoHeader_nProtoVer_set_gofutuapi_b194613f40b0860d(uintptr_t arg1, char arg2);
+extern char _wrap_FTAPI_ProtoHeader_nProtoVer_get_gofutuapi_b194613f40b0860d(uintptr_t arg1);
+extern void _wrap_FTAPI_ProtoHeader_nSerialNo_set_gofutuapi_b194613f40b0860d(uintptr_t arg1, swig_intgo arg2);
+extern swig_intgo _wrap_FTAPI_ProtoHeader_nSerialNo_get_gofutuapi_b194613f40b0860d(uintptr_t arg1);
+extern void _wrap_FTAPI_ProtoHeader_nBodyLen_set_gofutuapi_b194613f40b0860d(uintptr_t arg1, swig_intgo arg2);
+extern swig_intgo _wrap_FTAPI_ProtoHeader_nBodyLen_get_gofutuapi_b194613f40b0860d(uintptr_t arg1);
+extern void _wrap_FTAPI_ProtoHeader_arrBodySHA1_set_gofutuapi_b194613f40b0860d(uintptr_t arg1, swig_voidp arg2);
+extern swig_voidp _wrap_FTAPI_ProtoHeader_arrBodySHA1_get_gofutuapi_b194613f40b0860d(uintptr_t arg1);
+extern void _wrap_FTAPI_ProtoHeader_arrReserved_set_gofutuapi_b194613f40b0860d(uintptr_t arg1, swig_voidp arg2);
+extern swig_voidp _wrap_FTAPI_ProtoHeader_arrReserved_get_gofutuapi_b194613f40b0860d(uintptr_t arg1);
+extern uintptr_t _wrap_new_FTAPI_ProtoHeader_gofutuapi_b194613f40b0860d(void);
+extern void _wrap_delete_FTAPI_ProtoHeader_gofutuapi_b194613f40b0860d(uintptr_t arg1);
+extern swig_intgo _wrap_FTAPI_ReqReplyType_SvrReply_gofutuapi_b194613f40b0860d(void);
+extern swig_intgo _wrap_FTAPI_ReqReplyType_Timeout_gofutuapi_b194613f40b0860d(void);
+extern swig_intgo _wrap_FTAPI_ReqReplyType_DisConnect_gofutuapi_b194613f40b0860d(void);
+extern swig_intgo _wrap_FTAPI_InitFailType_Unknow_gofutuapi_b194613f40b0860d(void);
+extern swig_intgo _wrap_FTAPI_InitFailType_Timeout_gofutuapi_b194613f40b0860d(void);
+extern swig_intgo _wrap_FTAPI_InitFailType_DisConnect_gofutuapi_b194613f40b0860d(void);
+extern swig_intgo _wrap_FTAPI_InitFailType_SeriaNoNotMatch_gofutuapi_b194613f40b0860d(void);
+extern swig_intgo _wrap_FTAPI_InitFailType_SendInitReqFailed_gofutuapi_b194613f40b0860d(void);
+extern swig_intgo _wrap_FTAPI_InitFailType_OpenDReject_gofutuapi_b194613f40b0860d(void);
+extern swig_intgo _wrap_FTAPI_ConnectFailType_Unknown_gofutuapi_b194613f40b0860d(void);
+extern swig_intgo _wrap_FTAPI_ConnectFailType_None_gofutuapi_b194613f40b0860d(void);
+extern swig_intgo _wrap_FTAPI_ConnectFailType_CreateFailed_gofutuapi_b194613f40b0860d(void);
+extern swig_intgo _wrap_FTAPI_ConnectFailType_CloseFailed_gofutuapi_b194613f40b0860d(void);
+extern swig_intgo _wrap_FTAPI_ConnectFailType_ShutdownFailed_gofutuapi_b194613f40b0860d(void);
+extern swig_intgo _wrap_FTAPI_ConnectFailType_GetHostByNameFailed_gofutuapi_b194613f40b0860d(void);
+extern swig_intgo _wrap_FTAPI_ConnectFailType_GetHostByNameWrong_gofutuapi_b194613f40b0860d(void);
+extern swig_intgo _wrap_FTAPI_ConnectFailType_ConnectFailed_gofutuapi_b194613f40b0860d(void);
+extern swig_intgo _wrap_FTAPI_ConnectFailType_BindFailed_gofutuapi_b194613f40b0860d(void);
+extern swig_intgo _wrap_FTAPI_ConnectFailType_ListenFailed_gofutuapi_b194613f40b0860d(void);
+extern swig_intgo _wrap_FTAPI_ConnectFailType_SelectReturnError_gofutuapi_b194613f40b0860d(void);
+extern swig_intgo _wrap_FTAPI_ConnectFailType_SendFailed_gofutuapi_b194613f40b0860d(void);
+extern swig_intgo _wrap_FTAPI_ConnectFailType_RecvFailed_gofutuapi_b194613f40b0860d(void);
+extern void _wrap_FTAPIChannel_Init_gofutuapi_b194613f40b0860d(void);
+extern void _wrap_FTAPIChannel_UnInit_gofutuapi_b194613f40b0860d(void);
+extern uintptr_t _wrap_CreateFTAPIChannel_gofutuapi_b194613f40b0860d(void);
+extern void _wrap_ReleaseFTAPIChannel_gofutuapi_b194613f40b0860d(uintptr_t arg1);
+extern void _wrap_FTAPIChannel_SetClientInfo_gofutuapi_b194613f40b0860d(uintptr_t arg1, swig_type_1 arg2, swig_intgo arg3);
+extern void _wrap_FTAPIChannel_SetRSAPrivateKey_gofutuapi_b194613f40b0860d(uintptr_t arg1, swig_type_2 arg2);
+extern swig_intgo _wrap_FTAPIChannel_InitConnect_gofutuapi_b194613f40b0860d(uintptr_t arg1, swig_type_3 arg2, short arg3, swig_intgo arg4);
+extern swig_type_4 _wrap_FTAPIChannel_GetConnectID_gofutuapi_b194613f40b0860d(uintptr_t arg1);
+extern swig_intgo _wrap_FTAPIChannel_SendProto_gofutuapi_b194613f40b0860d(uintptr_t arg1, swig_intgo arg2, char arg3, swig_type_5 arg4);
+extern swig_intgo _wrap_FTAPIChannel_Close_gofutuapi_b194613f40b0860d(uintptr_t arg1);
+extern void _wrap_wrap_InitializeCallbacks_gofutuapi_b194613f40b0860d(uintptr_t arg1);
+extern uintptr_t _wrap__swig_NewDirectorFTAPIChannel_CallbackFTAPIChannel_Callback_gofutuapi_b194613f40b0860d(int);
+extern void _wrap_DeleteDirectorFTAPIChannel_Callback_gofutuapi_b194613f40b0860d(uintptr_t arg1);
+extern void _wrap_FTAPIChannel_Callback_OnDisConnect_gofutuapi_b194613f40b0860d(uintptr_t arg1, uintptr_t arg2, swig_type_6 arg3);
+extern void _wrap_FTAPIChannel_Callback_OnInitConnect_gofutuapi_b194613f40b0860d(uintptr_t arg1, uintptr_t arg2, swig_type_7 arg3, swig_type_8 arg4);
+extern void _wrap_FTAPIChannel_Callback_OnReply_gofutuapi_b194613f40b0860d(uintptr_t arg1, uintptr_t arg2, swig_intgo arg3, uintptr_t arg4, swig_type_9 arg5);
+extern void _wrap_FTAPIChannel_Callback_OnPush_gofutuapi_b194613f40b0860d(uintptr_t arg1, uintptr_t arg2, uintptr_t arg3, swig_type_10 arg4);
+extern void _wrap_delete_FTAPIChannel_Callback_gofutuapi_b194613f40b0860d(uintptr_t arg1);
 #undef intgo
 */
 import "C"
@@ -132,13 +132,13 @@ func swigCopyString(s string) string {
 
 func Swig_free(arg1 uintptr) {
 	_swig_i_0 := arg1
-	C._wrap_Swig_free_gofutuapi_d667299e3498665a(C.uintptr_t(_swig_i_0))
+	C._wrap_Swig_free_gofutuapi_b194613f40b0860d(C.uintptr_t(_swig_i_0))
 }
 
 func Swig_malloc(arg1 int) (_swig_ret uintptr) {
 	var swig_r uintptr
 	_swig_i_0 := arg1
-	swig_r = (uintptr)(C._wrap_Swig_malloc_gofutuapi_d667299e3498665a(C.swig_intgo(_swig_i_0)))
+	swig_r = (uintptr)(C._wrap_Swig_malloc_gofutuapi_b194613f40b0860d(C.swig_intgo(_swig_i_0)))
 	return swig_r
 }
 
@@ -178,116 +178,116 @@ func (p SwigcptrFTAPI_ProtoHeader) SwigIsFTAPI_ProtoHeader() {
 func (arg1 SwigcptrFTAPI_ProtoHeader) SetSzHeaderFlag(arg2 *byte) {
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	C._wrap_FTAPI_ProtoHeader_szHeaderFlag_set_gofutuapi_d667299e3498665a(C.uintptr_t(_swig_i_0), C.swig_voidp(_swig_i_1))
+	C._wrap_FTAPI_ProtoHeader_szHeaderFlag_set_gofutuapi_b194613f40b0860d(C.uintptr_t(_swig_i_0), C.swig_voidp(_swig_i_1))
 }
 
 func (arg1 SwigcptrFTAPI_ProtoHeader) GetSzHeaderFlag() (_swig_ret *byte) {
 	var swig_r *byte
 	_swig_i_0 := arg1
-	swig_r = (*byte)(C._wrap_FTAPI_ProtoHeader_szHeaderFlag_get_gofutuapi_d667299e3498665a(C.uintptr_t(_swig_i_0)))
+	swig_r = (*byte)(C._wrap_FTAPI_ProtoHeader_szHeaderFlag_get_gofutuapi_b194613f40b0860d(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func (arg1 SwigcptrFTAPI_ProtoHeader) SetNProtoID(arg2 uint) {
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	C._wrap_FTAPI_ProtoHeader_nProtoID_set_gofutuapi_d667299e3498665a(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1))
+	C._wrap_FTAPI_ProtoHeader_nProtoID_set_gofutuapi_b194613f40b0860d(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1))
 }
 
 func (arg1 SwigcptrFTAPI_ProtoHeader) GetNProtoID() (_swig_ret uint) {
 	var swig_r uint
 	_swig_i_0 := arg1
-	swig_r = (uint)(C._wrap_FTAPI_ProtoHeader_nProtoID_get_gofutuapi_d667299e3498665a(C.uintptr_t(_swig_i_0)))
+	swig_r = (uint)(C._wrap_FTAPI_ProtoHeader_nProtoID_get_gofutuapi_b194613f40b0860d(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func (arg1 SwigcptrFTAPI_ProtoHeader) SetNProtoFmtType(arg2 byte) {
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	C._wrap_FTAPI_ProtoHeader_nProtoFmtType_set_gofutuapi_d667299e3498665a(C.uintptr_t(_swig_i_0), C.char(_swig_i_1))
+	C._wrap_FTAPI_ProtoHeader_nProtoFmtType_set_gofutuapi_b194613f40b0860d(C.uintptr_t(_swig_i_0), C.char(_swig_i_1))
 }
 
 func (arg1 SwigcptrFTAPI_ProtoHeader) GetNProtoFmtType() (_swig_ret byte) {
 	var swig_r byte
 	_swig_i_0 := arg1
-	swig_r = (byte)(C._wrap_FTAPI_ProtoHeader_nProtoFmtType_get_gofutuapi_d667299e3498665a(C.uintptr_t(_swig_i_0)))
+	swig_r = (byte)(C._wrap_FTAPI_ProtoHeader_nProtoFmtType_get_gofutuapi_b194613f40b0860d(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func (arg1 SwigcptrFTAPI_ProtoHeader) SetNProtoVer(arg2 byte) {
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	C._wrap_FTAPI_ProtoHeader_nProtoVer_set_gofutuapi_d667299e3498665a(C.uintptr_t(_swig_i_0), C.char(_swig_i_1))
+	C._wrap_FTAPI_ProtoHeader_nProtoVer_set_gofutuapi_b194613f40b0860d(C.uintptr_t(_swig_i_0), C.char(_swig_i_1))
 }
 
 func (arg1 SwigcptrFTAPI_ProtoHeader) GetNProtoVer() (_swig_ret byte) {
 	var swig_r byte
 	_swig_i_0 := arg1
-	swig_r = (byte)(C._wrap_FTAPI_ProtoHeader_nProtoVer_get_gofutuapi_d667299e3498665a(C.uintptr_t(_swig_i_0)))
+	swig_r = (byte)(C._wrap_FTAPI_ProtoHeader_nProtoVer_get_gofutuapi_b194613f40b0860d(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func (arg1 SwigcptrFTAPI_ProtoHeader) SetNSerialNo(arg2 uint) {
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	C._wrap_FTAPI_ProtoHeader_nSerialNo_set_gofutuapi_d667299e3498665a(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1))
+	C._wrap_FTAPI_ProtoHeader_nSerialNo_set_gofutuapi_b194613f40b0860d(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1))
 }
 
 func (arg1 SwigcptrFTAPI_ProtoHeader) GetNSerialNo() (_swig_ret uint) {
 	var swig_r uint
 	_swig_i_0 := arg1
-	swig_r = (uint)(C._wrap_FTAPI_ProtoHeader_nSerialNo_get_gofutuapi_d667299e3498665a(C.uintptr_t(_swig_i_0)))
+	swig_r = (uint)(C._wrap_FTAPI_ProtoHeader_nSerialNo_get_gofutuapi_b194613f40b0860d(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func (arg1 SwigcptrFTAPI_ProtoHeader) SetNBodyLen(arg2 uint) {
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	C._wrap_FTAPI_ProtoHeader_nBodyLen_set_gofutuapi_d667299e3498665a(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1))
+	C._wrap_FTAPI_ProtoHeader_nBodyLen_set_gofutuapi_b194613f40b0860d(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1))
 }
 
 func (arg1 SwigcptrFTAPI_ProtoHeader) GetNBodyLen() (_swig_ret uint) {
 	var swig_r uint
 	_swig_i_0 := arg1
-	swig_r = (uint)(C._wrap_FTAPI_ProtoHeader_nBodyLen_get_gofutuapi_d667299e3498665a(C.uintptr_t(_swig_i_0)))
+	swig_r = (uint)(C._wrap_FTAPI_ProtoHeader_nBodyLen_get_gofutuapi_b194613f40b0860d(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func (arg1 SwigcptrFTAPI_ProtoHeader) SetArrBodySHA1(arg2 *byte) {
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	C._wrap_FTAPI_ProtoHeader_arrBodySHA1_set_gofutuapi_d667299e3498665a(C.uintptr_t(_swig_i_0), C.swig_voidp(_swig_i_1))
+	C._wrap_FTAPI_ProtoHeader_arrBodySHA1_set_gofutuapi_b194613f40b0860d(C.uintptr_t(_swig_i_0), C.swig_voidp(_swig_i_1))
 }
 
 func (arg1 SwigcptrFTAPI_ProtoHeader) GetArrBodySHA1() (_swig_ret *byte) {
 	var swig_r *byte
 	_swig_i_0 := arg1
-	swig_r = (*byte)(C._wrap_FTAPI_ProtoHeader_arrBodySHA1_get_gofutuapi_d667299e3498665a(C.uintptr_t(_swig_i_0)))
+	swig_r = (*byte)(C._wrap_FTAPI_ProtoHeader_arrBodySHA1_get_gofutuapi_b194613f40b0860d(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func (arg1 SwigcptrFTAPI_ProtoHeader) SetArrReserved(arg2 *byte) {
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	C._wrap_FTAPI_ProtoHeader_arrReserved_set_gofutuapi_d667299e3498665a(C.uintptr_t(_swig_i_0), C.swig_voidp(_swig_i_1))
+	C._wrap_FTAPI_ProtoHeader_arrReserved_set_gofutuapi_b194613f40b0860d(C.uintptr_t(_swig_i_0), C.swig_voidp(_swig_i_1))
 }
 
 func (arg1 SwigcptrFTAPI_ProtoHeader) GetArrReserved() (_swig_ret *byte) {
 	var swig_r *byte
 	_swig_i_0 := arg1
-	swig_r = (*byte)(C._wrap_FTAPI_ProtoHeader_arrReserved_get_gofutuapi_d667299e3498665a(C.uintptr_t(_swig_i_0)))
+	swig_r = (*byte)(C._wrap_FTAPI_ProtoHeader_arrReserved_get_gofutuapi_b194613f40b0860d(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func NewFTAPI_ProtoHeader() (_swig_ret FTAPI_ProtoHeader) {
 	var swig_r FTAPI_ProtoHeader
-	swig_r = (FTAPI_ProtoHeader)(SwigcptrFTAPI_ProtoHeader(C._wrap_new_FTAPI_ProtoHeader_gofutuapi_d667299e3498665a()))
+	swig_r = (FTAPI_ProtoHeader)(SwigcptrFTAPI_ProtoHeader(C._wrap_new_FTAPI_ProtoHeader_gofutuapi_b194613f40b0860d()))
 	return swig_r
 }
 
 func DeleteFTAPI_ProtoHeader(arg1 FTAPI_ProtoHeader) {
 	_swig_i_0 := arg1.Swigcptr()
-	C._wrap_delete_FTAPI_ProtoHeader_gofutuapi_d667299e3498665a(C.uintptr_t(_swig_i_0))
+	C._wrap_delete_FTAPI_ProtoHeader_gofutuapi_b194613f40b0860d(C.uintptr_t(_swig_i_0))
 }
 
 type FTAPI_ProtoHeader interface {
@@ -316,21 +316,21 @@ const FTAPI_ProtoFmtType_Json int = 1
 type FTAPI_ReqReplyType int
 func _swig_getFTAPI_ReqReplyType_SvrReply() (_swig_ret FTAPI_ReqReplyType) {
 	var swig_r FTAPI_ReqReplyType
-	swig_r = (FTAPI_ReqReplyType)(C._wrap_FTAPI_ReqReplyType_SvrReply_gofutuapi_d667299e3498665a())
+	swig_r = (FTAPI_ReqReplyType)(C._wrap_FTAPI_ReqReplyType_SvrReply_gofutuapi_b194613f40b0860d())
 	return swig_r
 }
 
 var FTAPI_ReqReplyType_SvrReply FTAPI_ReqReplyType = _swig_getFTAPI_ReqReplyType_SvrReply()
 func _swig_getFTAPI_ReqReplyType_Timeout() (_swig_ret FTAPI_ReqReplyType) {
 	var swig_r FTAPI_ReqReplyType
-	swig_r = (FTAPI_ReqReplyType)(C._wrap_FTAPI_ReqReplyType_Timeout_gofutuapi_d667299e3498665a())
+	swig_r = (FTAPI_ReqReplyType)(C._wrap_FTAPI_ReqReplyType_Timeout_gofutuapi_b194613f40b0860d())
 	return swig_r
 }
 
 var FTAPI_ReqReplyType_Timeout FTAPI_ReqReplyType = _swig_getFTAPI_ReqReplyType_Timeout()
 func _swig_getFTAPI_ReqReplyType_DisConnect() (_swig_ret FTAPI_ReqReplyType) {
 	var swig_r FTAPI_ReqReplyType
-	swig_r = (FTAPI_ReqReplyType)(C._wrap_FTAPI_ReqReplyType_DisConnect_gofutuapi_d667299e3498665a())
+	swig_r = (FTAPI_ReqReplyType)(C._wrap_FTAPI_ReqReplyType_DisConnect_gofutuapi_b194613f40b0860d())
 	return swig_r
 }
 
@@ -338,42 +338,42 @@ var FTAPI_ReqReplyType_DisConnect FTAPI_ReqReplyType = _swig_getFTAPI_ReqReplyTy
 type FTAPI_InitFailType int
 func _swig_getFTAPI_InitFailType_Unknow() (_swig_ret FTAPI_InitFailType) {
 	var swig_r FTAPI_InitFailType
-	swig_r = (FTAPI_InitFailType)(C._wrap_FTAPI_InitFailType_Unknow_gofutuapi_d667299e3498665a())
+	swig_r = (FTAPI_InitFailType)(C._wrap_FTAPI_InitFailType_Unknow_gofutuapi_b194613f40b0860d())
 	return swig_r
 }
 
 var FTAPI_InitFailType_Unknow FTAPI_InitFailType = _swig_getFTAPI_InitFailType_Unknow()
 func _swig_getFTAPI_InitFailType_Timeout() (_swig_ret FTAPI_InitFailType) {
 	var swig_r FTAPI_InitFailType
-	swig_r = (FTAPI_InitFailType)(C._wrap_FTAPI_InitFailType_Timeout_gofutuapi_d667299e3498665a())
+	swig_r = (FTAPI_InitFailType)(C._wrap_FTAPI_InitFailType_Timeout_gofutuapi_b194613f40b0860d())
 	return swig_r
 }
 
 var FTAPI_InitFailType_Timeout FTAPI_InitFailType = _swig_getFTAPI_InitFailType_Timeout()
 func _swig_getFTAPI_InitFailType_DisConnect() (_swig_ret FTAPI_InitFailType) {
 	var swig_r FTAPI_InitFailType
-	swig_r = (FTAPI_InitFailType)(C._wrap_FTAPI_InitFailType_DisConnect_gofutuapi_d667299e3498665a())
+	swig_r = (FTAPI_InitFailType)(C._wrap_FTAPI_InitFailType_DisConnect_gofutuapi_b194613f40b0860d())
 	return swig_r
 }
 
 var FTAPI_InitFailType_DisConnect FTAPI_InitFailType = _swig_getFTAPI_InitFailType_DisConnect()
 func _swig_getFTAPI_InitFailType_SeriaNoNotMatch() (_swig_ret FTAPI_InitFailType) {
 	var swig_r FTAPI_InitFailType
-	swig_r = (FTAPI_InitFailType)(C._wrap_FTAPI_InitFailType_SeriaNoNotMatch_gofutuapi_d667299e3498665a())
+	swig_r = (FTAPI_InitFailType)(C._wrap_FTAPI_InitFailType_SeriaNoNotMatch_gofutuapi_b194613f40b0860d())
 	return swig_r
 }
 
 var FTAPI_InitFailType_SeriaNoNotMatch FTAPI_InitFailType = _swig_getFTAPI_InitFailType_SeriaNoNotMatch()
 func _swig_getFTAPI_InitFailType_SendInitReqFailed() (_swig_ret FTAPI_InitFailType) {
 	var swig_r FTAPI_InitFailType
-	swig_r = (FTAPI_InitFailType)(C._wrap_FTAPI_InitFailType_SendInitReqFailed_gofutuapi_d667299e3498665a())
+	swig_r = (FTAPI_InitFailType)(C._wrap_FTAPI_InitFailType_SendInitReqFailed_gofutuapi_b194613f40b0860d())
 	return swig_r
 }
 
 var FTAPI_InitFailType_SendInitReqFailed FTAPI_InitFailType = _swig_getFTAPI_InitFailType_SendInitReqFailed()
 func _swig_getFTAPI_InitFailType_OpenDReject() (_swig_ret FTAPI_InitFailType) {
 	var swig_r FTAPI_InitFailType
-	swig_r = (FTAPI_InitFailType)(C._wrap_FTAPI_InitFailType_OpenDReject_gofutuapi_d667299e3498665a())
+	swig_r = (FTAPI_InitFailType)(C._wrap_FTAPI_InitFailType_OpenDReject_gofutuapi_b194613f40b0860d())
 	return swig_r
 }
 
@@ -381,120 +381,120 @@ var FTAPI_InitFailType_OpenDReject FTAPI_InitFailType = _swig_getFTAPI_InitFailT
 type FTAPI_ConnectFailType int
 func _swig_getFTAPI_ConnectFailType_Unknown() (_swig_ret FTAPI_ConnectFailType) {
 	var swig_r FTAPI_ConnectFailType
-	swig_r = (FTAPI_ConnectFailType)(C._wrap_FTAPI_ConnectFailType_Unknown_gofutuapi_d667299e3498665a())
+	swig_r = (FTAPI_ConnectFailType)(C._wrap_FTAPI_ConnectFailType_Unknown_gofutuapi_b194613f40b0860d())
 	return swig_r
 }
 
 var FTAPI_ConnectFailType_Unknown FTAPI_ConnectFailType = _swig_getFTAPI_ConnectFailType_Unknown()
 func _swig_getFTAPI_ConnectFailType_None() (_swig_ret FTAPI_ConnectFailType) {
 	var swig_r FTAPI_ConnectFailType
-	swig_r = (FTAPI_ConnectFailType)(C._wrap_FTAPI_ConnectFailType_None_gofutuapi_d667299e3498665a())
+	swig_r = (FTAPI_ConnectFailType)(C._wrap_FTAPI_ConnectFailType_None_gofutuapi_b194613f40b0860d())
 	return swig_r
 }
 
 var FTAPI_ConnectFailType_None FTAPI_ConnectFailType = _swig_getFTAPI_ConnectFailType_None()
 func _swig_getFTAPI_ConnectFailType_CreateFailed() (_swig_ret FTAPI_ConnectFailType) {
 	var swig_r FTAPI_ConnectFailType
-	swig_r = (FTAPI_ConnectFailType)(C._wrap_FTAPI_ConnectFailType_CreateFailed_gofutuapi_d667299e3498665a())
+	swig_r = (FTAPI_ConnectFailType)(C._wrap_FTAPI_ConnectFailType_CreateFailed_gofutuapi_b194613f40b0860d())
 	return swig_r
 }
 
 var FTAPI_ConnectFailType_CreateFailed FTAPI_ConnectFailType = _swig_getFTAPI_ConnectFailType_CreateFailed()
 func _swig_getFTAPI_ConnectFailType_CloseFailed() (_swig_ret FTAPI_ConnectFailType) {
 	var swig_r FTAPI_ConnectFailType
-	swig_r = (FTAPI_ConnectFailType)(C._wrap_FTAPI_ConnectFailType_CloseFailed_gofutuapi_d667299e3498665a())
+	swig_r = (FTAPI_ConnectFailType)(C._wrap_FTAPI_ConnectFailType_CloseFailed_gofutuapi_b194613f40b0860d())
 	return swig_r
 }
 
 var FTAPI_ConnectFailType_CloseFailed FTAPI_ConnectFailType = _swig_getFTAPI_ConnectFailType_CloseFailed()
 func _swig_getFTAPI_ConnectFailType_ShutdownFailed() (_swig_ret FTAPI_ConnectFailType) {
 	var swig_r FTAPI_ConnectFailType
-	swig_r = (FTAPI_ConnectFailType)(C._wrap_FTAPI_ConnectFailType_ShutdownFailed_gofutuapi_d667299e3498665a())
+	swig_r = (FTAPI_ConnectFailType)(C._wrap_FTAPI_ConnectFailType_ShutdownFailed_gofutuapi_b194613f40b0860d())
 	return swig_r
 }
 
 var FTAPI_ConnectFailType_ShutdownFailed FTAPI_ConnectFailType = _swig_getFTAPI_ConnectFailType_ShutdownFailed()
 func _swig_getFTAPI_ConnectFailType_GetHostByNameFailed() (_swig_ret FTAPI_ConnectFailType) {
 	var swig_r FTAPI_ConnectFailType
-	swig_r = (FTAPI_ConnectFailType)(C._wrap_FTAPI_ConnectFailType_GetHostByNameFailed_gofutuapi_d667299e3498665a())
+	swig_r = (FTAPI_ConnectFailType)(C._wrap_FTAPI_ConnectFailType_GetHostByNameFailed_gofutuapi_b194613f40b0860d())
 	return swig_r
 }
 
 var FTAPI_ConnectFailType_GetHostByNameFailed FTAPI_ConnectFailType = _swig_getFTAPI_ConnectFailType_GetHostByNameFailed()
 func _swig_getFTAPI_ConnectFailType_GetHostByNameWrong() (_swig_ret FTAPI_ConnectFailType) {
 	var swig_r FTAPI_ConnectFailType
-	swig_r = (FTAPI_ConnectFailType)(C._wrap_FTAPI_ConnectFailType_GetHostByNameWrong_gofutuapi_d667299e3498665a())
+	swig_r = (FTAPI_ConnectFailType)(C._wrap_FTAPI_ConnectFailType_GetHostByNameWrong_gofutuapi_b194613f40b0860d())
 	return swig_r
 }
 
 var FTAPI_ConnectFailType_GetHostByNameWrong FTAPI_ConnectFailType = _swig_getFTAPI_ConnectFailType_GetHostByNameWrong()
 func _swig_getFTAPI_ConnectFailType_ConnectFailed() (_swig_ret FTAPI_ConnectFailType) {
 	var swig_r FTAPI_ConnectFailType
-	swig_r = (FTAPI_ConnectFailType)(C._wrap_FTAPI_ConnectFailType_ConnectFailed_gofutuapi_d667299e3498665a())
+	swig_r = (FTAPI_ConnectFailType)(C._wrap_FTAPI_ConnectFailType_ConnectFailed_gofutuapi_b194613f40b0860d())
 	return swig_r
 }
 
 var FTAPI_ConnectFailType_ConnectFailed FTAPI_ConnectFailType = _swig_getFTAPI_ConnectFailType_ConnectFailed()
 func _swig_getFTAPI_ConnectFailType_BindFailed() (_swig_ret FTAPI_ConnectFailType) {
 	var swig_r FTAPI_ConnectFailType
-	swig_r = (FTAPI_ConnectFailType)(C._wrap_FTAPI_ConnectFailType_BindFailed_gofutuapi_d667299e3498665a())
+	swig_r = (FTAPI_ConnectFailType)(C._wrap_FTAPI_ConnectFailType_BindFailed_gofutuapi_b194613f40b0860d())
 	return swig_r
 }
 
 var FTAPI_ConnectFailType_BindFailed FTAPI_ConnectFailType = _swig_getFTAPI_ConnectFailType_BindFailed()
 func _swig_getFTAPI_ConnectFailType_ListenFailed() (_swig_ret FTAPI_ConnectFailType) {
 	var swig_r FTAPI_ConnectFailType
-	swig_r = (FTAPI_ConnectFailType)(C._wrap_FTAPI_ConnectFailType_ListenFailed_gofutuapi_d667299e3498665a())
+	swig_r = (FTAPI_ConnectFailType)(C._wrap_FTAPI_ConnectFailType_ListenFailed_gofutuapi_b194613f40b0860d())
 	return swig_r
 }
 
 var FTAPI_ConnectFailType_ListenFailed FTAPI_ConnectFailType = _swig_getFTAPI_ConnectFailType_ListenFailed()
 func _swig_getFTAPI_ConnectFailType_SelectReturnError() (_swig_ret FTAPI_ConnectFailType) {
 	var swig_r FTAPI_ConnectFailType
-	swig_r = (FTAPI_ConnectFailType)(C._wrap_FTAPI_ConnectFailType_SelectReturnError_gofutuapi_d667299e3498665a())
+	swig_r = (FTAPI_ConnectFailType)(C._wrap_FTAPI_ConnectFailType_SelectReturnError_gofutuapi_b194613f40b0860d())
 	return swig_r
 }
 
 var FTAPI_ConnectFailType_SelectReturnError FTAPI_ConnectFailType = _swig_getFTAPI_ConnectFailType_SelectReturnError()
 func _swig_getFTAPI_ConnectFailType_SendFailed() (_swig_ret FTAPI_ConnectFailType) {
 	var swig_r FTAPI_ConnectFailType
-	swig_r = (FTAPI_ConnectFailType)(C._wrap_FTAPI_ConnectFailType_SendFailed_gofutuapi_d667299e3498665a())
+	swig_r = (FTAPI_ConnectFailType)(C._wrap_FTAPI_ConnectFailType_SendFailed_gofutuapi_b194613f40b0860d())
 	return swig_r
 }
 
 var FTAPI_ConnectFailType_SendFailed FTAPI_ConnectFailType = _swig_getFTAPI_ConnectFailType_SendFailed()
 func _swig_getFTAPI_ConnectFailType_RecvFailed() (_swig_ret FTAPI_ConnectFailType) {
 	var swig_r FTAPI_ConnectFailType
-	swig_r = (FTAPI_ConnectFailType)(C._wrap_FTAPI_ConnectFailType_RecvFailed_gofutuapi_d667299e3498665a())
+	swig_r = (FTAPI_ConnectFailType)(C._wrap_FTAPI_ConnectFailType_RecvFailed_gofutuapi_b194613f40b0860d())
 	return swig_r
 }
 
 var FTAPI_ConnectFailType_RecvFailed FTAPI_ConnectFailType = _swig_getFTAPI_ConnectFailType_RecvFailed()
 const FTAPI_InitFail int = 100
 func FTAPIChannel_Init() {
-	C._wrap_FTAPIChannel_Init_gofutuapi_d667299e3498665a()
+	C._wrap_FTAPIChannel_Init_gofutuapi_b194613f40b0860d()
 }
 
 func FTAPIChannel_UnInit() {
-	C._wrap_FTAPIChannel_UnInit_gofutuapi_d667299e3498665a()
+	C._wrap_FTAPIChannel_UnInit_gofutuapi_b194613f40b0860d()
 }
 
 func CreateFTAPIChannel() (_swig_ret uintptr) {
 	var swig_r uintptr
-	swig_r = (uintptr)(C._wrap_CreateFTAPIChannel_gofutuapi_d667299e3498665a())
+	swig_r = (uintptr)(C._wrap_CreateFTAPIChannel_gofutuapi_b194613f40b0860d())
 	return swig_r
 }
 
 func ReleaseFTAPIChannel(arg1 uintptr) {
 	_swig_i_0 := arg1
-	C._wrap_ReleaseFTAPIChannel_gofutuapi_d667299e3498665a(C.uintptr_t(_swig_i_0))
+	C._wrap_ReleaseFTAPIChannel_gofutuapi_b194613f40b0860d(C.uintptr_t(_swig_i_0))
 }
 
 func FTAPIChannel_SetClientInfo(arg1 uintptr, arg2 string, arg3 int) {
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
-	C._wrap_FTAPIChannel_SetClientInfo_gofutuapi_d667299e3498665a(C.uintptr_t(_swig_i_0), *(*C.swig_type_1)(unsafe.Pointer(&_swig_i_1)), C.swig_intgo(_swig_i_2))
+	C._wrap_FTAPIChannel_SetClientInfo_gofutuapi_b194613f40b0860d(C.uintptr_t(_swig_i_0), *(*C.swig_type_1)(unsafe.Pointer(&_swig_i_1)), C.swig_intgo(_swig_i_2))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -503,7 +503,7 @@ func FTAPIChannel_SetClientInfo(arg1 uintptr, arg2 string, arg3 int) {
 func FTAPIChannel_SetRSAPrivateKey(arg1 uintptr, arg2 string) {
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	C._wrap_FTAPIChannel_SetRSAPrivateKey_gofutuapi_d667299e3498665a(C.uintptr_t(_swig_i_0), *(*C.swig_type_2)(unsafe.Pointer(&_swig_i_1)))
+	C._wrap_FTAPIChannel_SetRSAPrivateKey_gofutuapi_b194613f40b0860d(C.uintptr_t(_swig_i_0), *(*C.swig_type_2)(unsafe.Pointer(&_swig_i_1)))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -515,7 +515,7 @@ func FTAPIChannel_InitConnect(arg1 uintptr, arg2 string, arg3 uint16, arg4 int) 
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
 	_swig_i_3 := arg4
-	swig_r = (int)(C._wrap_FTAPIChannel_InitConnect_gofutuapi_d667299e3498665a(C.uintptr_t(_swig_i_0), *(*C.swig_type_3)(unsafe.Pointer(&_swig_i_1)), C.short(_swig_i_2), C.swig_intgo(_swig_i_3)))
+	swig_r = (int)(C._wrap_FTAPIChannel_InitConnect_gofutuapi_b194613f40b0860d(C.uintptr_t(_swig_i_0), *(*C.swig_type_3)(unsafe.Pointer(&_swig_i_1)), C.short(_swig_i_2), C.swig_intgo(_swig_i_3)))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -525,7 +525,7 @@ func FTAPIChannel_InitConnect(arg1 uintptr, arg2 string, arg3 uint16, arg4 int) 
 func FTAPIChannel_GetConnectID(arg1 uintptr) (_swig_ret uint64) {
 	var swig_r uint64
 	_swig_i_0 := arg1
-	swig_r = (uint64)(C._wrap_FTAPIChannel_GetConnectID_gofutuapi_d667299e3498665a(C.uintptr_t(_swig_i_0)))
+	swig_r = (uint64)(C._wrap_FTAPIChannel_GetConnectID_gofutuapi_b194613f40b0860d(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
@@ -535,7 +535,7 @@ func FTAPIChannel_SendProto(arg1 uintptr, arg2 uint, arg3 byte, arg4 string) (_s
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
 	_swig_i_3 := arg4
-	swig_r = (uint)(C._wrap_FTAPIChannel_SendProto_gofutuapi_d667299e3498665a(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1), C.char(_swig_i_2), *(*C.swig_type_5)(unsafe.Pointer(&_swig_i_3))))
+	swig_r = (uint)(C._wrap_FTAPIChannel_SendProto_gofutuapi_b194613f40b0860d(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1), C.char(_swig_i_2), *(*C.swig_type_5)(unsafe.Pointer(&_swig_i_3))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg4
 	}
@@ -545,13 +545,13 @@ func FTAPIChannel_SendProto(arg1 uintptr, arg2 uint, arg3 byte, arg4 string) (_s
 func FTAPIChannel_Close(arg1 uintptr) (_swig_ret int) {
 	var swig_r int
 	_swig_i_0 := arg1
-	swig_r = (int)(C._wrap_FTAPIChannel_Close_gofutuapi_d667299e3498665a(C.uintptr_t(_swig_i_0)))
+	swig_r = (int)(C._wrap_FTAPIChannel_Close_gofutuapi_b194613f40b0860d(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func Wrap_InitializeCallbacks(arg1 uintptr) {
 	_swig_i_0 := arg1
-	C._wrap_wrap_InitializeCallbacks_gofutuapi_d667299e3498665a(C.uintptr_t(_swig_i_0))
+	C._wrap_wrap_InitializeCallbacks_gofutuapi_b194613f40b0860d(C.uintptr_t(_swig_i_0))
 }
 
 type _swig_DirectorFTAPIChannel_Callback struct {
@@ -572,7 +572,7 @@ func (p *_swig_DirectorFTAPIChannel_Callback) DirectorInterface() interface{} {
 
 func NewDirectorFTAPIChannel_Callback(v interface{}) FTAPIChannel_Callback {
 	p := &_swig_DirectorFTAPIChannel_Callback{0, v}
-	p.SwigcptrFTAPIChannel_Callback = SwigcptrFTAPIChannel_Callback(C._wrap__swig_NewDirectorFTAPIChannel_CallbackFTAPIChannel_Callback_gofutuapi_d667299e3498665a(C.int(swigDirectorAdd(p))))
+	p.SwigcptrFTAPIChannel_Callback = SwigcptrFTAPIChannel_Callback(C._wrap__swig_NewDirectorFTAPIChannel_CallbackFTAPIChannel_Callback_gofutuapi_b194613f40b0860d(C.int(swigDirectorAdd(p))))
 	return p
 }
 
@@ -588,8 +588,8 @@ func (swig_p *_swig_DirectorFTAPIChannel_Callback) OnDisConnect(pChannel uintptr
 	panic("call to pure virtual method")
 }
 
-//export Swig_DirectorFTAPIChannel_Callback_callback_OnDisConnect_gofutuapi_d667299e3498665a
-func Swig_DirectorFTAPIChannel_Callback_callback_OnDisConnect_gofutuapi_d667299e3498665a(swig_c int, pChannel uintptr, nErrCode int64) {
+//export Swig_DirectorFTAPIChannel_Callback_callback_OnDisConnect_gofutuapi_b194613f40b0860d
+func Swig_DirectorFTAPIChannel_Callback_callback_OnDisConnect_gofutuapi_b194613f40b0860d(swig_c int, pChannel uintptr, nErrCode int64) {
 	swig_p := swigDirectorLookup(swig_c).(*_swig_DirectorFTAPIChannel_Callback)
 	swig_p.OnDisConnect(pChannel, nErrCode)
 }
@@ -606,8 +606,8 @@ func (swig_p *_swig_DirectorFTAPIChannel_Callback) OnInitConnect(pChannel uintpt
 	panic("call to pure virtual method")
 }
 
-//export Swig_DirectorFTAPIChannel_Callback_callback_OnInitConnect_gofutuapi_d667299e3498665a
-func Swig_DirectorFTAPIChannel_Callback_callback_OnInitConnect_gofutuapi_d667299e3498665a(swig_c int, pChannel uintptr, nErrCode int64, strDesc string) {
+//export Swig_DirectorFTAPIChannel_Callback_callback_OnInitConnect_gofutuapi_b194613f40b0860d
+func Swig_DirectorFTAPIChannel_Callback_callback_OnInitConnect_gofutuapi_b194613f40b0860d(swig_c int, pChannel uintptr, nErrCode int64, strDesc string) {
 	var _swig_i_2 string
 	swig_p := swigDirectorLookup(swig_c).(*_swig_DirectorFTAPIChannel_Callback)
 
@@ -628,8 +628,8 @@ func (swig_p *_swig_DirectorFTAPIChannel_Callback) OnReply(pChannel uintptr, enR
 	panic("call to pure virtual method")
 }
 
-//export Swig_DirectorFTAPIChannel_Callback_callback_OnReply_gofutuapi_d667299e3498665a
-func Swig_DirectorFTAPIChannel_Callback_callback_OnReply_gofutuapi_d667299e3498665a(swig_c int, pChannel uintptr, enReqReplyType FTAPI_ReqReplyType, pProtoHeader uintptr, pProtoData string) {
+//export Swig_DirectorFTAPIChannel_Callback_callback_OnReply_gofutuapi_b194613f40b0860d
+func Swig_DirectorFTAPIChannel_Callback_callback_OnReply_gofutuapi_b194613f40b0860d(swig_c int, pChannel uintptr, enReqReplyType FTAPI_ReqReplyType, pProtoHeader uintptr, pProtoData string) {
 	var _swig_i_3 string
 	swig_p := swigDirectorLookup(swig_c).(*_swig_DirectorFTAPIChannel_Callback)
 
@@ -650,8 +650,8 @@ func (swig_p *_swig_DirectorFTAPIChannel_Callback) OnPush(pChannel uintptr, pPro
 	panic("call to pure virtual method")
 }
 
-//export Swig_DirectorFTAPIChannel_Callback_callback_OnPush_gofutuapi_d667299e3498665a
-func Swig_DirectorFTAPIChannel_Callback_callback_OnPush_gofutuapi_d667299e3498665a(swig_c int, pChannel uintptr, pProtoHeader uintptr, pProtoData string) {
+//export Swig_DirectorFTAPIChannel_Callback_callback_OnPush_gofutuapi_b194613f40b0860d
+func Swig_DirectorFTAPIChannel_Callback_callback_OnPush_gofutuapi_b194613f40b0860d(swig_c int, pChannel uintptr, pProtoHeader uintptr, pProtoData string) {
 	var _swig_i_2 string
 	swig_p := swigDirectorLookup(swig_c).(*_swig_DirectorFTAPIChannel_Callback)
 
@@ -662,11 +662,11 @@ func Swig_DirectorFTAPIChannel_Callback_callback_OnPush_gofutuapi_d667299e349866
 
 func DeleteDirectorFTAPIChannel_Callback(arg1 FTAPIChannel_Callback) {
 	_swig_i_0 := arg1.Swigcptr()
-	C._wrap_DeleteDirectorFTAPIChannel_Callback_gofutuapi_d667299e3498665a(C.uintptr_t(_swig_i_0))
+	C._wrap_DeleteDirectorFTAPIChannel_Callback_gofutuapi_b194613f40b0860d(C.uintptr_t(_swig_i_0))
 }
 
-//export Swiggo_DeleteDirector_FTAPIChannel_Callback_gofutuapi_d667299e3498665a
-func Swiggo_DeleteDirector_FTAPIChannel_Callback_gofutuapi_d667299e3498665a(c int) {
+//export Swiggo_DeleteDirector_FTAPIChannel_Callback_gofutuapi_b194613f40b0860d
+func Swiggo_DeleteDirector_FTAPIChannel_Callback_gofutuapi_b194613f40b0860d(c int) {
 	swigDirectorLookup(c).(*_swig_DirectorFTAPIChannel_Callback).SwigcptrFTAPIChannel_Callback = 0
 	swigDirectorDelete(c)
 }
@@ -688,7 +688,7 @@ func (arg1 SwigcptrFTAPIChannel_Callback) OnDisConnect(arg2 uintptr, arg3 int64)
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
-	C._wrap_FTAPIChannel_Callback_OnDisConnect_gofutuapi_d667299e3498665a(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1), C.swig_type_6(_swig_i_2))
+	C._wrap_FTAPIChannel_Callback_OnDisConnect_gofutuapi_b194613f40b0860d(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1), C.swig_type_6(_swig_i_2))
 }
 
 func (arg1 SwigcptrFTAPIChannel_Callback) OnInitConnect(arg2 uintptr, arg3 int64, arg4 string) {
@@ -696,7 +696,7 @@ func (arg1 SwigcptrFTAPIChannel_Callback) OnInitConnect(arg2 uintptr, arg3 int64
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
 	_swig_i_3 := arg4
-	C._wrap_FTAPIChannel_Callback_OnInitConnect_gofutuapi_d667299e3498665a(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1), C.swig_type_7(_swig_i_2), *(*C.swig_type_8)(unsafe.Pointer(&_swig_i_3)))
+	C._wrap_FTAPIChannel_Callback_OnInitConnect_gofutuapi_b194613f40b0860d(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1), C.swig_type_7(_swig_i_2), *(*C.swig_type_8)(unsafe.Pointer(&_swig_i_3)))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg4
 	}
@@ -708,7 +708,7 @@ func (arg1 SwigcptrFTAPIChannel_Callback) OnReply(arg2 uintptr, arg3 FTAPI_ReqRe
 	_swig_i_2 := arg3
 	_swig_i_3 := arg4.Swigcptr()
 	_swig_i_4 := arg5
-	C._wrap_FTAPIChannel_Callback_OnReply_gofutuapi_d667299e3498665a(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1), C.swig_intgo(_swig_i_2), C.uintptr_t(_swig_i_3), *(*C.swig_type_9)(unsafe.Pointer(&_swig_i_4)))
+	C._wrap_FTAPIChannel_Callback_OnReply_gofutuapi_b194613f40b0860d(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1), C.swig_intgo(_swig_i_2), C.uintptr_t(_swig_i_3), *(*C.swig_type_9)(unsafe.Pointer(&_swig_i_4)))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg5
 	}
@@ -719,7 +719,7 @@ func (arg1 SwigcptrFTAPIChannel_Callback) OnPush(arg2 uintptr, arg3 FTAPI_ProtoH
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3.Swigcptr()
 	_swig_i_3 := arg4
-	C._wrap_FTAPIChannel_Callback_OnPush_gofutuapi_d667299e3498665a(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1), C.uintptr_t(_swig_i_2), *(*C.swig_type_10)(unsafe.Pointer(&_swig_i_3)))
+	C._wrap_FTAPIChannel_Callback_OnPush_gofutuapi_b194613f40b0860d(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1), C.uintptr_t(_swig_i_2), *(*C.swig_type_10)(unsafe.Pointer(&_swig_i_3)))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg4
 	}
@@ -727,7 +727,7 @@ func (arg1 SwigcptrFTAPIChannel_Callback) OnPush(arg2 uintptr, arg3 FTAPI_ProtoH
 
 func DeleteFTAPIChannel_Callback(arg1 FTAPIChannel_Callback) {
 	_swig_i_0 := arg1.Swigcptr()
-	C._wrap_delete_FTAPIChannel_Callback_gofutuapi_d667299e3498665a(C.uintptr_t(_swig_i_0))
+	C._wrap_delete_FTAPIChannel_Callback_gofutuapi_b194613f40b0860d(C.uintptr_t(_swig_i_0))
 }
 
 type FTAPIChannel_Callback interface {

@@ -5,6 +5,7 @@ import (
 	"github.com/Sirupsen/logrus"
 	"time"
 	"github.com/stephenlyu/gofutuapi/futuproto/Trd_GetAccList"
+	"runtime"
 )
 
 const PrivateKey = `-----BEGIN RSA PRIVATE KEY-----
@@ -24,20 +25,12 @@ VYTU89Wawd7N2bMliwJBAJmYeO7DD+7gJ9rj8+LmtDKEdtYyPDCoq98471Fn+nF4
 -----END RSA PRIVATE KEY-----`
 
 type ConnCallback struct {
+	ch chan bool
 }
 
 func (cb *ConnCallback) OnInitConnect(conn FTAPIConn, errCode int64, desc string) {
-	logrus.Infof("OnInitConnect errCode: %d desc: %s", errCode, desc)
-
-	client := conn.(FTAPIConnTrd)
-
-	req := &Trd_GetAccList.Request{
-		C2S: &Trd_GetAccList.C2S{
-			UserID: MakeUInt64Pointer(5883618),
-		},
-	}
-	ret := client.GetAccList(req)
-	logrus.Infof("GetAccList ret: %d", ret)
+	logrus.Infof("OnInitConnect errCode: %d desc: %s connectionId: %d", errCode, desc, conn.GetConnectID())
+	cb.ch <- true
 }
 
 func (conn *ConnCallback) OnDisconnect(client FTAPIConn, errCode int64) {
@@ -46,6 +39,7 @@ func (conn *ConnCallback) OnDisconnect(client FTAPIConn, errCode int64) {
 
 type TradeSpiCallback struct {
 	FTSPI_TrdBase
+	ch chan bool
 }
 
 func (spi *TradeSpiCallback) OnReply_GetAccList(client FTAPIConnTrd, nSerialNo uint, rsp *Trd_GetAccList.Response) {
@@ -53,17 +47,35 @@ func (spi *TradeSpiCallback) OnReply_GetAccList(client FTAPIConnTrd, nSerialNo u
 }
 
 func main() {
+
+	ch := make(chan bool)
+
+	runtime.LockOSThread()
+
+	println("here")
 	Init()
+
 	client := NewFTAPIConnTrd()
-	client.SetSpi(&ConnCallback{})
-	client.SetTrdSpi(&TradeSpiCallback{})
-	client.SetClientInfo("FTAPITest", 1);
+	client.SetSpi(&ConnCallback{ch:ch})
+	client.SetTrdSpi(&TradeSpiCallback{ch:ch})
+	client.SetClientInfo("javaclient", 1);
 	client.SetRSAPrivateKey(PrivateKey)
 	client.InitConnect("118.190.77.238", 11111, true)
+
+	<- ch
+
+	req := &Trd_GetAccList.Request{
+		C2S: &Trd_GetAccList.C2S{
+			UserID: MakeUInt64Pointer(5883618),
+		},
+	}
+	ret := client.GetAccList(req)
+	logrus.Infof("GetAccList ret: %d", ret)
 
 	time.Sleep(time.Second * 10)
 
 	client.Disconnect()
 
 	time.Sleep(time.Second * 10)
+	runtime.UnlockOSThread()
 }

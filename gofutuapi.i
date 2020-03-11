@@ -12,9 +12,18 @@
 
 %typemap(in) (const Futu::i8_t* pProtoData, Futu::i32_t nDataLen)
 %{
-  $1 = (Futu::i8_t *) $input.p;
+  $1 = (Futu::i8_t *) malloc($input.n);
+  memcpy($1, $input.p, $input.n);
   $2 = (Futu::i32_t) $input.n;
 %}
+
+%typemap(freearg) (const Futu::i8_t* pProtoData, Futu::i32_t nDataLen)
+%{
+  {
+    free($1);
+  }
+%}
+
 
 /* Includes the header files in the wrapper code */
 %header %{

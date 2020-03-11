@@ -371,17 +371,17 @@ SwigDirector_FTAPIChannel_Callback::SwigDirector_FTAPIChannel_Callback(int swig_
       go_val(swig_p), swig_mem(0)
 { }
 
-extern "C" void Swig_DirectorFTAPIChannel_Callback_callback_OnDisConnect_gofutuapi_d667299e3498665a(int, FTAPIChannelPtr pChannel, long long nErrCode);
+extern "C" void Swig_DirectorFTAPIChannel_Callback_callback_OnDisConnect_gofutuapi_b194613f40b0860d(int, FTAPIChannelPtr pChannel, long long nErrCode);
 void SwigDirector_FTAPIChannel_Callback::OnDisConnect(FTAPIChannelPtr pChannel, Futu::i64_t nErrCode) {
   FTAPIChannelPtr swig_pChannel;
   long long swig_nErrCode;
   
   *(FTAPIChannelPtr *)&swig_pChannel = (FTAPIChannelPtr)pChannel; 
   swig_nErrCode = (Futu::i64_t)nErrCode; 
-  Swig_DirectorFTAPIChannel_Callback_callback_OnDisConnect_gofutuapi_d667299e3498665a(go_val, swig_pChannel, swig_nErrCode);
+  Swig_DirectorFTAPIChannel_Callback_callback_OnDisConnect_gofutuapi_b194613f40b0860d(go_val, swig_pChannel, swig_nErrCode);
 }
 
-extern "C" void Swig_DirectorFTAPIChannel_Callback_callback_OnInitConnect_gofutuapi_d667299e3498665a(int, FTAPIChannelPtr pChannel, long long nErrCode, _gostring_ strDesc);
+extern "C" void Swig_DirectorFTAPIChannel_Callback_callback_OnInitConnect_gofutuapi_b194613f40b0860d(int, FTAPIChannelPtr pChannel, long long nErrCode, _gostring_ strDesc);
 void SwigDirector_FTAPIChannel_Callback::OnInitConnect(FTAPIChannelPtr pChannel, Futu::i64_t nErrCode, char const *strDesc) {
   FTAPIChannelPtr swig_pChannel;
   long long swig_nErrCode;
@@ -392,10 +392,10 @@ void SwigDirector_FTAPIChannel_Callback::OnInitConnect(FTAPIChannelPtr pChannel,
   
   swig_strDesc = Swig_AllocateString((char*)strDesc, strDesc ? strlen((char*)strDesc) : 0);
   
-  Swig_DirectorFTAPIChannel_Callback_callback_OnInitConnect_gofutuapi_d667299e3498665a(go_val, swig_pChannel, swig_nErrCode, swig_strDesc);
+  Swig_DirectorFTAPIChannel_Callback_callback_OnInitConnect_gofutuapi_b194613f40b0860d(go_val, swig_pChannel, swig_nErrCode, swig_strDesc);
 }
 
-extern "C" void Swig_DirectorFTAPIChannel_Callback_callback_OnReply_gofutuapi_d667299e3498665a(int, FTAPIChannelPtr pChannel, intgo enReqReplyType, FTAPI_ProtoHeader *pProtoHeader, _gostring_ pProtoData, intgo nDataLen);
+extern "C" void Swig_DirectorFTAPIChannel_Callback_callback_OnReply_gofutuapi_b194613f40b0860d(int, FTAPIChannelPtr pChannel, intgo enReqReplyType, FTAPI_ProtoHeader *pProtoHeader, _gostring_ pProtoData, intgo nDataLen);
 void SwigDirector_FTAPIChannel_Callback::OnReply(FTAPIChannelPtr pChannel, FTAPI_ReqReplyType enReqReplyType, FTAPI_ProtoHeader const *pProtoHeader, Futu::i8_t const *pProtoData, Futu::i32_t nDataLen) {
   FTAPIChannelPtr swig_pChannel;
   intgo swig_enReqReplyType;
@@ -410,10 +410,10 @@ void SwigDirector_FTAPIChannel_Callback::OnReply(FTAPIChannelPtr pChannel, FTAPI
   swig_pProtoData = Swig_AllocateString((char*)pProtoData, pProtoData ? strlen((char*)pProtoData) : 0);
   
   swig_nDataLen = (Futu::i32_t)nDataLen; 
-  Swig_DirectorFTAPIChannel_Callback_callback_OnReply_gofutuapi_d667299e3498665a(go_val, swig_pChannel, swig_enReqReplyType, swig_pProtoHeader, swig_pProtoData, swig_nDataLen);
+  Swig_DirectorFTAPIChannel_Callback_callback_OnReply_gofutuapi_b194613f40b0860d(go_val, swig_pChannel, swig_enReqReplyType, swig_pProtoHeader, swig_pProtoData, swig_nDataLen);
 }
 
-extern "C" void Swig_DirectorFTAPIChannel_Callback_callback_OnPush_gofutuapi_d667299e3498665a(int, FTAPIChannelPtr pChannel, FTAPI_ProtoHeader *pProtoHeader, _gostring_ pProtoData, intgo nDataLen);
+extern "C" void Swig_DirectorFTAPIChannel_Callback_callback_OnPush_gofutuapi_b194613f40b0860d(int, FTAPIChannelPtr pChannel, FTAPI_ProtoHeader *pProtoHeader, _gostring_ pProtoData, intgo nDataLen);
 void SwigDirector_FTAPIChannel_Callback::OnPush(FTAPIChannelPtr pChannel, FTAPI_ProtoHeader const *pProtoHeader, Futu::i8_t const *pProtoData, Futu::i32_t nDataLen) {
   FTAPIChannelPtr swig_pChannel;
   FTAPI_ProtoHeader *swig_pProtoHeader;
@@ -426,13 +426,13 @@ void SwigDirector_FTAPIChannel_Callback::OnPush(FTAPIChannelPtr pChannel, FTAPI_
   swig_pProtoData = Swig_AllocateString((char*)pProtoData, pProtoData ? strlen((char*)pProtoData) : 0);
   
   swig_nDataLen = (Futu::i32_t)nDataLen; 
-  Swig_DirectorFTAPIChannel_Callback_callback_OnPush_gofutuapi_d667299e3498665a(go_val, swig_pChannel, swig_pProtoHeader, swig_pProtoData, swig_nDataLen);
+  Swig_DirectorFTAPIChannel_Callback_callback_OnPush_gofutuapi_b194613f40b0860d(go_val, swig_pChannel, swig_pProtoHeader, swig_pProtoData, swig_nDataLen);
 }
 
-extern "C" void Swiggo_DeleteDirector_FTAPIChannel_Callback_gofutuapi_d667299e3498665a(intgo);
+extern "C" void Swiggo_DeleteDirector_FTAPIChannel_Callback_gofutuapi_b194613f40b0860d(intgo);
 SwigDirector_FTAPIChannel_Callback::~SwigDirector_FTAPIChannel_Callback()
 {
-  Swiggo_DeleteDirector_FTAPIChannel_Callback_gofutuapi_d667299e3498665a(go_val);
+  Swiggo_DeleteDirector_FTAPIChannel_Callback_gofutuapi_b194613f40b0860d(go_val);
   delete swig_mem;
 }
 
@@ -440,7 +440,7 @@ SwigDirector_FTAPIChannel_Callback::~SwigDirector_FTAPIChannel_Callback()
 extern "C" {
 #endif
 
-void _wrap_Swig_free_gofutuapi_d667299e3498665a(void *_swig_go_0) {
+void _wrap_Swig_free_gofutuapi_b194613f40b0860d(void *_swig_go_0) {
   void *arg1 = (void *) 0 ;
   
   arg1 = *(void **)&_swig_go_0; 
@@ -450,7 +450,7 @@ void _wrap_Swig_free_gofutuapi_d667299e3498665a(void *_swig_go_0) {
 }
 
 
-void *_wrap_Swig_malloc_gofutuapi_d667299e3498665a(intgo _swig_go_0) {
+void *_wrap_Swig_malloc_gofutuapi_b194613f40b0860d(intgo _swig_go_0) {
   int arg1 ;
   void *result = 0 ;
   void *_swig_go_result;
@@ -463,7 +463,7 @@ void *_wrap_Swig_malloc_gofutuapi_d667299e3498665a(intgo _swig_go_0) {
 }
 
 
-void _wrap_FTAPI_ProtoHeader_szHeaderFlag_set_gofutuapi_d667299e3498665a(FTAPI_ProtoHeader *_swig_go_0, char *_swig_go_1) {
+void _wrap_FTAPI_ProtoHeader_szHeaderFlag_set_gofutuapi_b194613f40b0860d(FTAPI_ProtoHeader *_swig_go_0, char *_swig_go_1) {
   FTAPI_ProtoHeader *arg1 = (FTAPI_ProtoHeader *) 0 ;
   Futu::u8_t *arg2 ;
   
@@ -479,7 +479,7 @@ void _wrap_FTAPI_ProtoHeader_szHeaderFlag_set_gofutuapi_d667299e3498665a(FTAPI_P
 }
 
 
-char *_wrap_FTAPI_ProtoHeader_szHeaderFlag_get_gofutuapi_d667299e3498665a(FTAPI_ProtoHeader *_swig_go_0) {
+char *_wrap_FTAPI_ProtoHeader_szHeaderFlag_get_gofutuapi_b194613f40b0860d(FTAPI_ProtoHeader *_swig_go_0) {
   FTAPI_ProtoHeader *arg1 = (FTAPI_ProtoHeader *) 0 ;
   Futu::u8_t *result = 0 ;
   char *_swig_go_result;
@@ -492,7 +492,7 @@ char *_wrap_FTAPI_ProtoHeader_szHeaderFlag_get_gofutuapi_d667299e3498665a(FTAPI_
 }
 
 
-void _wrap_FTAPI_ProtoHeader_nProtoID_set_gofutuapi_d667299e3498665a(FTAPI_ProtoHeader *_swig_go_0, intgo _swig_go_1) {
+void _wrap_FTAPI_ProtoHeader_nProtoID_set_gofutuapi_b194613f40b0860d(FTAPI_ProtoHeader *_swig_go_0, intgo _swig_go_1) {
   FTAPI_ProtoHeader *arg1 = (FTAPI_ProtoHeader *) 0 ;
   Futu::u32_t arg2 ;
   
@@ -504,7 +504,7 @@ void _wrap_FTAPI_ProtoHeader_nProtoID_set_gofutuapi_d667299e3498665a(FTAPI_Proto
 }
 
 
-intgo _wrap_FTAPI_ProtoHeader_nProtoID_get_gofutuapi_d667299e3498665a(FTAPI_ProtoHeader *_swig_go_0) {
+intgo _wrap_FTAPI_ProtoHeader_nProtoID_get_gofutuapi_b194613f40b0860d(FTAPI_ProtoHeader *_swig_go_0) {
   FTAPI_ProtoHeader *arg1 = (FTAPI_ProtoHeader *) 0 ;
   Futu::u32_t result;
   intgo _swig_go_result;
@@ -517,7 +517,7 @@ intgo _wrap_FTAPI_ProtoHeader_nProtoID_get_gofutuapi_d667299e3498665a(FTAPI_Prot
 }
 
 
-void _wrap_FTAPI_ProtoHeader_nProtoFmtType_set_gofutuapi_d667299e3498665a(FTAPI_ProtoHeader *_swig_go_0, char _swig_go_1) {
+void _wrap_FTAPI_ProtoHeader_nProtoFmtType_set_gofutuapi_b194613f40b0860d(FTAPI_ProtoHeader *_swig_go_0, char _swig_go_1) {
   FTAPI_ProtoHeader *arg1 = (FTAPI_ProtoHeader *) 0 ;
   Futu::u8_t arg2 ;
   
@@ -529,7 +529,7 @@ void _wrap_FTAPI_ProtoHeader_nProtoFmtType_set_gofutuapi_d667299e3498665a(FTAPI_
 }
 
 
-char _wrap_FTAPI_ProtoHeader_nProtoFmtType_get_gofutuapi_d667299e3498665a(FTAPI_ProtoHeader *_swig_go_0) {
+char _wrap_FTAPI_ProtoHeader_nProtoFmtType_get_gofutuapi_b194613f40b0860d(FTAPI_ProtoHeader *_swig_go_0) {
   FTAPI_ProtoHeader *arg1 = (FTAPI_ProtoHeader *) 0 ;
   Futu::u8_t result;
   char _swig_go_result;
@@ -542,7 +542,7 @@ char _wrap_FTAPI_ProtoHeader_nProtoFmtType_get_gofutuapi_d667299e3498665a(FTAPI_
 }
 
 
-void _wrap_FTAPI_ProtoHeader_nProtoVer_set_gofutuapi_d667299e3498665a(FTAPI_ProtoHeader *_swig_go_0, char _swig_go_1) {
+void _wrap_FTAPI_ProtoHeader_nProtoVer_set_gofutuapi_b194613f40b0860d(FTAPI_ProtoHeader *_swig_go_0, char _swig_go_1) {
   FTAPI_ProtoHeader *arg1 = (FTAPI_ProtoHeader *) 0 ;
   Futu::u8_t arg2 ;
   
@@ -554,7 +554,7 @@ void _wrap_FTAPI_ProtoHeader_nProtoVer_set_gofutuapi_d667299e3498665a(FTAPI_Prot
 }
 
 
-char _wrap_FTAPI_ProtoHeader_nProtoVer_get_gofutuapi_d667299e3498665a(FTAPI_ProtoHeader *_swig_go_0) {
+char _wrap_FTAPI_ProtoHeader_nProtoVer_get_gofutuapi_b194613f40b0860d(FTAPI_ProtoHeader *_swig_go_0) {
   FTAPI_ProtoHeader *arg1 = (FTAPI_ProtoHeader *) 0 ;
   Futu::u8_t result;
   char _swig_go_result;
@@ -567,7 +567,7 @@ char _wrap_FTAPI_ProtoHeader_nProtoVer_get_gofutuapi_d667299e3498665a(FTAPI_Prot
 }
 
 
-void _wrap_FTAPI_ProtoHeader_nSerialNo_set_gofutuapi_d667299e3498665a(FTAPI_ProtoHeader *_swig_go_0, intgo _swig_go_1) {
+void _wrap_FTAPI_ProtoHeader_nSerialNo_set_gofutuapi_b194613f40b0860d(FTAPI_ProtoHeader *_swig_go_0, intgo _swig_go_1) {
   FTAPI_ProtoHeader *arg1 = (FTAPI_ProtoHeader *) 0 ;
   Futu::u32_t arg2 ;
   
@@ -579,7 +579,7 @@ void _wrap_FTAPI_ProtoHeader_nSerialNo_set_gofutuapi_d667299e3498665a(FTAPI_Prot
 }
 
 
-intgo _wrap_FTAPI_ProtoHeader_nSerialNo_get_gofutuapi_d667299e3498665a(FTAPI_ProtoHeader *_swig_go_0) {
+intgo _wrap_FTAPI_ProtoHeader_nSerialNo_get_gofutuapi_b194613f40b0860d(FTAPI_ProtoHeader *_swig_go_0) {
   FTAPI_ProtoHeader *arg1 = (FTAPI_ProtoHeader *) 0 ;
   Futu::u32_t result;
   intgo _swig_go_result;
@@ -592,7 +592,7 @@ intgo _wrap_FTAPI_ProtoHeader_nSerialNo_get_gofutuapi_d667299e3498665a(FTAPI_Pro
 }
 
 
-void _wrap_FTAPI_ProtoHeader_nBodyLen_set_gofutuapi_d667299e3498665a(FTAPI_ProtoHeader *_swig_go_0, intgo _swig_go_1) {
+void _wrap_FTAPI_ProtoHeader_nBodyLen_set_gofutuapi_b194613f40b0860d(FTAPI_ProtoHeader *_swig_go_0, intgo _swig_go_1) {
   FTAPI_ProtoHeader *arg1 = (FTAPI_ProtoHeader *) 0 ;
   Futu::u32_t arg2 ;
   
@@ -604,7 +604,7 @@ void _wrap_FTAPI_ProtoHeader_nBodyLen_set_gofutuapi_d667299e3498665a(FTAPI_Proto
 }
 
 
-intgo _wrap_FTAPI_ProtoHeader_nBodyLen_get_gofutuapi_d667299e3498665a(FTAPI_ProtoHeader *_swig_go_0) {
+intgo _wrap_FTAPI_ProtoHeader_nBodyLen_get_gofutuapi_b194613f40b0860d(FTAPI_ProtoHeader *_swig_go_0) {
   FTAPI_ProtoHeader *arg1 = (FTAPI_ProtoHeader *) 0 ;
   Futu::u32_t result;
   intgo _swig_go_result;
@@ -617,7 +617,7 @@ intgo _wrap_FTAPI_ProtoHeader_nBodyLen_get_gofutuapi_d667299e3498665a(FTAPI_Prot
 }
 
 
-void _wrap_FTAPI_ProtoHeader_arrBodySHA1_set_gofutuapi_d667299e3498665a(FTAPI_ProtoHeader *_swig_go_0, char *_swig_go_1) {
+void _wrap_FTAPI_ProtoHeader_arrBodySHA1_set_gofutuapi_b194613f40b0860d(FTAPI_ProtoHeader *_swig_go_0, char *_swig_go_1) {
   FTAPI_ProtoHeader *arg1 = (FTAPI_ProtoHeader *) 0 ;
   Futu::u8_t *arg2 ;
   
@@ -633,7 +633,7 @@ void _wrap_FTAPI_ProtoHeader_arrBodySHA1_set_gofutuapi_d667299e3498665a(FTAPI_Pr
 }
 
 
-char *_wrap_FTAPI_ProtoHeader_arrBodySHA1_get_gofutuapi_d667299e3498665a(FTAPI_ProtoHeader *_swig_go_0) {
+char *_wrap_FTAPI_ProtoHeader_arrBodySHA1_get_gofutuapi_b194613f40b0860d(FTAPI_ProtoHeader *_swig_go_0) {
   FTAPI_ProtoHeader *arg1 = (FTAPI_ProtoHeader *) 0 ;
   Futu::u8_t *result = 0 ;
   char *_swig_go_result;
@@ -646,7 +646,7 @@ char *_wrap_FTAPI_ProtoHeader_arrBodySHA1_get_gofutuapi_d667299e3498665a(FTAPI_P
 }
 
 
-void _wrap_FTAPI_ProtoHeader_arrReserved_set_gofutuapi_d667299e3498665a(FTAPI_ProtoHeader *_swig_go_0, char *_swig_go_1) {
+void _wrap_FTAPI_ProtoHeader_arrReserved_set_gofutuapi_b194613f40b0860d(FTAPI_ProtoHeader *_swig_go_0, char *_swig_go_1) {
   FTAPI_ProtoHeader *arg1 = (FTAPI_ProtoHeader *) 0 ;
   Futu::u8_t *arg2 ;
   
@@ -662,7 +662,7 @@ void _wrap_FTAPI_ProtoHeader_arrReserved_set_gofutuapi_d667299e3498665a(FTAPI_Pr
 }
 
 
-char *_wrap_FTAPI_ProtoHeader_arrReserved_get_gofutuapi_d667299e3498665a(FTAPI_ProtoHeader *_swig_go_0) {
+char *_wrap_FTAPI_ProtoHeader_arrReserved_get_gofutuapi_b194613f40b0860d(FTAPI_ProtoHeader *_swig_go_0) {
   FTAPI_ProtoHeader *arg1 = (FTAPI_ProtoHeader *) 0 ;
   Futu::u8_t *result = 0 ;
   char *_swig_go_result;
@@ -675,7 +675,7 @@ char *_wrap_FTAPI_ProtoHeader_arrReserved_get_gofutuapi_d667299e3498665a(FTAPI_P
 }
 
 
-FTAPI_ProtoHeader *_wrap_new_FTAPI_ProtoHeader_gofutuapi_d667299e3498665a() {
+FTAPI_ProtoHeader *_wrap_new_FTAPI_ProtoHeader_gofutuapi_b194613f40b0860d() {
   FTAPI_ProtoHeader *result = 0 ;
   FTAPI_ProtoHeader *_swig_go_result;
   
@@ -686,7 +686,7 @@ FTAPI_ProtoHeader *_wrap_new_FTAPI_ProtoHeader_gofutuapi_d667299e3498665a() {
 }
 
 
-void _wrap_delete_FTAPI_ProtoHeader_gofutuapi_d667299e3498665a(FTAPI_ProtoHeader *_swig_go_0) {
+void _wrap_delete_FTAPI_ProtoHeader_gofutuapi_b194613f40b0860d(FTAPI_ProtoHeader *_swig_go_0) {
   FTAPI_ProtoHeader *arg1 = (FTAPI_ProtoHeader *) 0 ;
   
   arg1 = *(FTAPI_ProtoHeader **)&_swig_go_0; 
@@ -696,7 +696,7 @@ void _wrap_delete_FTAPI_ProtoHeader_gofutuapi_d667299e3498665a(FTAPI_ProtoHeader
 }
 
 
-intgo _wrap_FTAPI_ReqReplyType_SvrReply_gofutuapi_d667299e3498665a() {
+intgo _wrap_FTAPI_ReqReplyType_SvrReply_gofutuapi_b194613f40b0860d() {
   FTAPI_ReqReplyType result;
   intgo _swig_go_result;
   
@@ -708,7 +708,7 @@ intgo _wrap_FTAPI_ReqReplyType_SvrReply_gofutuapi_d667299e3498665a() {
 }
 
 
-intgo _wrap_FTAPI_ReqReplyType_Timeout_gofutuapi_d667299e3498665a() {
+intgo _wrap_FTAPI_ReqReplyType_Timeout_gofutuapi_b194613f40b0860d() {
   FTAPI_ReqReplyType result;
   intgo _swig_go_result;
   
@@ -720,7 +720,7 @@ intgo _wrap_FTAPI_ReqReplyType_Timeout_gofutuapi_d667299e3498665a() {
 }
 
 
-intgo _wrap_FTAPI_ReqReplyType_DisConnect_gofutuapi_d667299e3498665a() {
+intgo _wrap_FTAPI_ReqReplyType_DisConnect_gofutuapi_b194613f40b0860d() {
   FTAPI_ReqReplyType result;
   intgo _swig_go_result;
   
@@ -732,7 +732,7 @@ intgo _wrap_FTAPI_ReqReplyType_DisConnect_gofutuapi_d667299e3498665a() {
 }
 
 
-intgo _wrap_FTAPI_InitFailType_Unknow_gofutuapi_d667299e3498665a() {
+intgo _wrap_FTAPI_InitFailType_Unknow_gofutuapi_b194613f40b0860d() {
   FTAPI_InitFailType result;
   intgo _swig_go_result;
   
@@ -744,7 +744,7 @@ intgo _wrap_FTAPI_InitFailType_Unknow_gofutuapi_d667299e3498665a() {
 }
 
 
-intgo _wrap_FTAPI_InitFailType_Timeout_gofutuapi_d667299e3498665a() {
+intgo _wrap_FTAPI_InitFailType_Timeout_gofutuapi_b194613f40b0860d() {
   FTAPI_InitFailType result;
   intgo _swig_go_result;
   
@@ -756,7 +756,7 @@ intgo _wrap_FTAPI_InitFailType_Timeout_gofutuapi_d667299e3498665a() {
 }
 
 
-intgo _wrap_FTAPI_InitFailType_DisConnect_gofutuapi_d667299e3498665a() {
+intgo _wrap_FTAPI_InitFailType_DisConnect_gofutuapi_b194613f40b0860d() {
   FTAPI_InitFailType result;
   intgo _swig_go_result;
   
@@ -768,7 +768,7 @@ intgo _wrap_FTAPI_InitFailType_DisConnect_gofutuapi_d667299e3498665a() {
 }
 
 
-intgo _wrap_FTAPI_InitFailType_SeriaNoNotMatch_gofutuapi_d667299e3498665a() {
+intgo _wrap_FTAPI_InitFailType_SeriaNoNotMatch_gofutuapi_b194613f40b0860d() {
   FTAPI_InitFailType result;
   intgo _swig_go_result;
   
@@ -780,7 +780,7 @@ intgo _wrap_FTAPI_InitFailType_SeriaNoNotMatch_gofutuapi_d667299e3498665a() {
 }
 
 
-intgo _wrap_FTAPI_InitFailType_SendInitReqFailed_gofutuapi_d667299e3498665a() {
+intgo _wrap_FTAPI_InitFailType_SendInitReqFailed_gofutuapi_b194613f40b0860d() {
   FTAPI_InitFailType result;
   intgo _swig_go_result;
   
@@ -792,7 +792,7 @@ intgo _wrap_FTAPI_InitFailType_SendInitReqFailed_gofutuapi_d667299e3498665a() {
 }
 
 
-intgo _wrap_FTAPI_InitFailType_OpenDReject_gofutuapi_d667299e3498665a() {
+intgo _wrap_FTAPI_InitFailType_OpenDReject_gofutuapi_b194613f40b0860d() {
   FTAPI_InitFailType result;
   intgo _swig_go_result;
   
@@ -804,7 +804,7 @@ intgo _wrap_FTAPI_InitFailType_OpenDReject_gofutuapi_d667299e3498665a() {
 }
 
 
-intgo _wrap_FTAPI_ConnectFailType_Unknown_gofutuapi_d667299e3498665a() {
+intgo _wrap_FTAPI_ConnectFailType_Unknown_gofutuapi_b194613f40b0860d() {
   FTAPI_ConnectFailType result;
   intgo _swig_go_result;
   
@@ -816,7 +816,7 @@ intgo _wrap_FTAPI_ConnectFailType_Unknown_gofutuapi_d667299e3498665a() {
 }
 
 
-intgo _wrap_FTAPI_ConnectFailType_None_gofutuapi_d667299e3498665a() {
+intgo _wrap_FTAPI_ConnectFailType_None_gofutuapi_b194613f40b0860d() {
   FTAPI_ConnectFailType result;
   intgo _swig_go_result;
   
@@ -828,7 +828,7 @@ intgo _wrap_FTAPI_ConnectFailType_None_gofutuapi_d667299e3498665a() {
 }
 
 
-intgo _wrap_FTAPI_ConnectFailType_CreateFailed_gofutuapi_d667299e3498665a() {
+intgo _wrap_FTAPI_ConnectFailType_CreateFailed_gofutuapi_b194613f40b0860d() {
   FTAPI_ConnectFailType result;
   intgo _swig_go_result;
   
@@ -840,7 +840,7 @@ intgo _wrap_FTAPI_ConnectFailType_CreateFailed_gofutuapi_d667299e3498665a() {
 }
 
 
-intgo _wrap_FTAPI_ConnectFailType_CloseFailed_gofutuapi_d667299e3498665a() {
+intgo _wrap_FTAPI_ConnectFailType_CloseFailed_gofutuapi_b194613f40b0860d() {
   FTAPI_ConnectFailType result;
   intgo _swig_go_result;
   
@@ -852,7 +852,7 @@ intgo _wrap_FTAPI_ConnectFailType_CloseFailed_gofutuapi_d667299e3498665a() {
 }
 
 
-intgo _wrap_FTAPI_ConnectFailType_ShutdownFailed_gofutuapi_d667299e3498665a() {
+intgo _wrap_FTAPI_ConnectFailType_ShutdownFailed_gofutuapi_b194613f40b0860d() {
   FTAPI_ConnectFailType result;
   intgo _swig_go_result;
   
@@ -864,7 +864,7 @@ intgo _wrap_FTAPI_ConnectFailType_ShutdownFailed_gofutuapi_d667299e3498665a() {
 }
 
 
-intgo _wrap_FTAPI_ConnectFailType_GetHostByNameFailed_gofutuapi_d667299e3498665a() {
+intgo _wrap_FTAPI_ConnectFailType_GetHostByNameFailed_gofutuapi_b194613f40b0860d() {
   FTAPI_ConnectFailType result;
   intgo _swig_go_result;
   
@@ -876,7 +876,7 @@ intgo _wrap_FTAPI_ConnectFailType_GetHostByNameFailed_gofutuapi_d667299e3498665a
 }
 
 
-intgo _wrap_FTAPI_ConnectFailType_GetHostByNameWrong_gofutuapi_d667299e3498665a() {
+intgo _wrap_FTAPI_ConnectFailType_GetHostByNameWrong_gofutuapi_b194613f40b0860d() {
   FTAPI_ConnectFailType result;
   intgo _swig_go_result;
   
@@ -888,7 +888,7 @@ intgo _wrap_FTAPI_ConnectFailType_GetHostByNameWrong_gofutuapi_d667299e3498665a(
 }
 
 
-intgo _wrap_FTAPI_ConnectFailType_ConnectFailed_gofutuapi_d667299e3498665a() {
+intgo _wrap_FTAPI_ConnectFailType_ConnectFailed_gofutuapi_b194613f40b0860d() {
   FTAPI_ConnectFailType result;
   intgo _swig_go_result;
   
@@ -900,7 +900,7 @@ intgo _wrap_FTAPI_ConnectFailType_ConnectFailed_gofutuapi_d667299e3498665a() {
 }
 
 
-intgo _wrap_FTAPI_ConnectFailType_BindFailed_gofutuapi_d667299e3498665a() {
+intgo _wrap_FTAPI_ConnectFailType_BindFailed_gofutuapi_b194613f40b0860d() {
   FTAPI_ConnectFailType result;
   intgo _swig_go_result;
   
@@ -912,7 +912,7 @@ intgo _wrap_FTAPI_ConnectFailType_BindFailed_gofutuapi_d667299e3498665a() {
 }
 
 
-intgo _wrap_FTAPI_ConnectFailType_ListenFailed_gofutuapi_d667299e3498665a() {
+intgo _wrap_FTAPI_ConnectFailType_ListenFailed_gofutuapi_b194613f40b0860d() {
   FTAPI_ConnectFailType result;
   intgo _swig_go_result;
   
@@ -924,7 +924,7 @@ intgo _wrap_FTAPI_ConnectFailType_ListenFailed_gofutuapi_d667299e3498665a() {
 }
 
 
-intgo _wrap_FTAPI_ConnectFailType_SelectReturnError_gofutuapi_d667299e3498665a() {
+intgo _wrap_FTAPI_ConnectFailType_SelectReturnError_gofutuapi_b194613f40b0860d() {
   FTAPI_ConnectFailType result;
   intgo _swig_go_result;
   
@@ -936,7 +936,7 @@ intgo _wrap_FTAPI_ConnectFailType_SelectReturnError_gofutuapi_d667299e3498665a()
 }
 
 
-intgo _wrap_FTAPI_ConnectFailType_SendFailed_gofutuapi_d667299e3498665a() {
+intgo _wrap_FTAPI_ConnectFailType_SendFailed_gofutuapi_b194613f40b0860d() {
   FTAPI_ConnectFailType result;
   intgo _swig_go_result;
   
@@ -948,7 +948,7 @@ intgo _wrap_FTAPI_ConnectFailType_SendFailed_gofutuapi_d667299e3498665a() {
 }
 
 
-intgo _wrap_FTAPI_ConnectFailType_RecvFailed_gofutuapi_d667299e3498665a() {
+intgo _wrap_FTAPI_ConnectFailType_RecvFailed_gofutuapi_b194613f40b0860d() {
   FTAPI_ConnectFailType result;
   intgo _swig_go_result;
   
@@ -960,19 +960,19 @@ intgo _wrap_FTAPI_ConnectFailType_RecvFailed_gofutuapi_d667299e3498665a() {
 }
 
 
-void _wrap_FTAPIChannel_Init_gofutuapi_d667299e3498665a() {
+void _wrap_FTAPIChannel_Init_gofutuapi_b194613f40b0860d() {
   FTAPIChannel_Init();
   
 }
 
 
-void _wrap_FTAPIChannel_UnInit_gofutuapi_d667299e3498665a() {
+void _wrap_FTAPIChannel_UnInit_gofutuapi_b194613f40b0860d() {
   FTAPIChannel_UnInit();
   
 }
 
 
-FTAPIChannelPtr _wrap_CreateFTAPIChannel_gofutuapi_d667299e3498665a() {
+FTAPIChannelPtr _wrap_CreateFTAPIChannel_gofutuapi_b194613f40b0860d() {
   FTAPIChannelPtr result;
   FTAPIChannelPtr _swig_go_result;
   
@@ -983,7 +983,7 @@ FTAPIChannelPtr _wrap_CreateFTAPIChannel_gofutuapi_d667299e3498665a() {
 }
 
 
-void _wrap_ReleaseFTAPIChannel_gofutuapi_d667299e3498665a(FTAPIChannelPtr _swig_go_0) {
+void _wrap_ReleaseFTAPIChannel_gofutuapi_b194613f40b0860d(FTAPIChannelPtr _swig_go_0) {
   FTAPIChannelPtr arg1 = (FTAPIChannelPtr) 0 ;
   
   arg1 = *(FTAPIChannelPtr *)&_swig_go_0; 
@@ -993,7 +993,7 @@ void _wrap_ReleaseFTAPIChannel_gofutuapi_d667299e3498665a(FTAPIChannelPtr _swig_
 }
 
 
-void _wrap_FTAPIChannel_SetClientInfo_gofutuapi_d667299e3498665a(FTAPIChannelPtr _swig_go_0, _gostring_ _swig_go_1, intgo _swig_go_2) {
+void _wrap_FTAPIChannel_SetClientInfo_gofutuapi_b194613f40b0860d(FTAPIChannelPtr _swig_go_0, _gostring_ _swig_go_1, intgo _swig_go_2) {
   FTAPIChannelPtr arg1 = (FTAPIChannelPtr) 0 ;
   char *arg2 = (char *) 0 ;
   Futu::i32_t arg3 ;
@@ -1012,7 +1012,7 @@ void _wrap_FTAPIChannel_SetClientInfo_gofutuapi_d667299e3498665a(FTAPIChannelPtr
 }
 
 
-void _wrap_FTAPIChannel_SetRSAPrivateKey_gofutuapi_d667299e3498665a(FTAPIChannelPtr _swig_go_0, _gostring_ _swig_go_1) {
+void _wrap_FTAPIChannel_SetRSAPrivateKey_gofutuapi_b194613f40b0860d(FTAPIChannelPtr _swig_go_0, _gostring_ _swig_go_1) {
   FTAPIChannelPtr arg1 = (FTAPIChannelPtr) 0 ;
   char *arg2 = (char *) 0 ;
   
@@ -1029,7 +1029,7 @@ void _wrap_FTAPIChannel_SetRSAPrivateKey_gofutuapi_d667299e3498665a(FTAPIChannel
 }
 
 
-intgo _wrap_FTAPIChannel_InitConnect_gofutuapi_d667299e3498665a(FTAPIChannelPtr _swig_go_0, _gostring_ _swig_go_1, short _swig_go_2, intgo _swig_go_3) {
+intgo _wrap_FTAPIChannel_InitConnect_gofutuapi_b194613f40b0860d(FTAPIChannelPtr _swig_go_0, _gostring_ _swig_go_1, short _swig_go_2, intgo _swig_go_3) {
   FTAPIChannelPtr arg1 = (FTAPIChannelPtr) 0 ;
   char *arg2 = (char *) 0 ;
   Futu::u16_t arg3 ;
@@ -1053,7 +1053,7 @@ intgo _wrap_FTAPIChannel_InitConnect_gofutuapi_d667299e3498665a(FTAPIChannelPtr 
 }
 
 
-long long _wrap_FTAPIChannel_GetConnectID_gofutuapi_d667299e3498665a(FTAPIChannelPtr _swig_go_0) {
+long long _wrap_FTAPIChannel_GetConnectID_gofutuapi_b194613f40b0860d(FTAPIChannelPtr _swig_go_0) {
   FTAPIChannelPtr arg1 = (FTAPIChannelPtr) 0 ;
   Futu::u64_t result;
   long long _swig_go_result;
@@ -1066,7 +1066,7 @@ long long _wrap_FTAPIChannel_GetConnectID_gofutuapi_d667299e3498665a(FTAPIChanne
 }
 
 
-intgo _wrap_FTAPIChannel_SendProto_gofutuapi_d667299e3498665a(FTAPIChannelPtr _swig_go_0, intgo _swig_go_1, char _swig_go_2, _gostring_ _swig_go_3) {
+intgo _wrap_FTAPIChannel_SendProto_gofutuapi_b194613f40b0860d(FTAPIChannelPtr _swig_go_0, intgo _swig_go_1, char _swig_go_2, _gostring_ _swig_go_3) {
   FTAPIChannelPtr arg1 = (FTAPIChannelPtr) 0 ;
   Futu::u32_t arg2 ;
   Futu::u8_t arg3 ;
@@ -1079,17 +1079,32 @@ intgo _wrap_FTAPIChannel_SendProto_gofutuapi_d667299e3498665a(FTAPIChannelPtr _s
   arg2 = (Futu::u32_t)_swig_go_1; 
   arg3 = (Futu::u8_t)_swig_go_2; 
   
-  arg4 = (Futu::i8_t *) _swig_go_3.p;
+  arg4 = (Futu::i8_t *) malloc(_swig_go_3.n);
+  memcpy(arg4, _swig_go_3.p, _swig_go_3.n);
   arg5 = (Futu::i32_t) _swig_go_3.n;
+
+  printf("data len: %d\n", arg5);
+  for (int i=0; i <arg5; i++ ) {
+    printf("%d ", arg4[i]);
+  }
+  printf("\n");
   
+  printf("arg1: %p arg2: %d arg3: %d arg4: %p arg5: %d\n", arg1, arg2, arg3, arg4, arg5);
+
   
   result = (Futu::u32_t)FTAPIChannel_SendProto(arg1,arg2,arg3,(char const *)arg4,arg5);
   _swig_go_result = result; 
+  
+  {
+    fflush(stdout);
+    free(arg4);
+  }
+  
   return _swig_go_result;
 }
 
 
-intgo _wrap_FTAPIChannel_Close_gofutuapi_d667299e3498665a(FTAPIChannelPtr _swig_go_0) {
+intgo _wrap_FTAPIChannel_Close_gofutuapi_b194613f40b0860d(FTAPIChannelPtr _swig_go_0) {
   FTAPIChannelPtr arg1 = (FTAPIChannelPtr) 0 ;
   Futu::i32_t result;
   intgo _swig_go_result;
@@ -1102,7 +1117,7 @@ intgo _wrap_FTAPIChannel_Close_gofutuapi_d667299e3498665a(FTAPIChannelPtr _swig_
 }
 
 
-void _wrap_wrap_InitializeCallbacks_gofutuapi_d667299e3498665a(FTAPIChannelPtr _swig_go_0) {
+void _wrap_wrap_InitializeCallbacks_gofutuapi_b194613f40b0860d(FTAPIChannelPtr _swig_go_0) {
   FTAPIChannelPtr arg1 = (FTAPIChannelPtr) 0 ;
   
   arg1 = *(FTAPIChannelPtr *)&_swig_go_0; 
@@ -1112,7 +1127,7 @@ void _wrap_wrap_InitializeCallbacks_gofutuapi_d667299e3498665a(FTAPIChannelPtr _
 }
 
 
-FTAPIChannel_Callback *_wrap__swig_NewDirectorFTAPIChannel_CallbackFTAPIChannel_Callback_gofutuapi_d667299e3498665a(intgo _swig_go_0) {
+FTAPIChannel_Callback *_wrap__swig_NewDirectorFTAPIChannel_CallbackFTAPIChannel_Callback_gofutuapi_b194613f40b0860d(intgo _swig_go_0) {
   int arg1 ;
   FTAPIChannel_Callback *result = 0 ;
   FTAPIChannel_Callback *_swig_go_result;
@@ -1125,7 +1140,7 @@ FTAPIChannel_Callback *_wrap__swig_NewDirectorFTAPIChannel_CallbackFTAPIChannel_
 }
 
 
-void _wrap_DeleteDirectorFTAPIChannel_Callback_gofutuapi_d667299e3498665a(FTAPIChannel_Callback *_swig_go_0) {
+void _wrap_DeleteDirectorFTAPIChannel_Callback_gofutuapi_b194613f40b0860d(FTAPIChannel_Callback *_swig_go_0) {
   FTAPIChannel_Callback *arg1 = (FTAPIChannel_Callback *) 0 ;
   
   arg1 = *(FTAPIChannel_Callback **)&_swig_go_0; 
@@ -1135,7 +1150,7 @@ void _wrap_DeleteDirectorFTAPIChannel_Callback_gofutuapi_d667299e3498665a(FTAPIC
 }
 
 
-void _wrap_FTAPIChannel_Callback_OnDisConnect_gofutuapi_d667299e3498665a(FTAPIChannel_Callback *_swig_go_0, FTAPIChannelPtr _swig_go_1, long long _swig_go_2) {
+void _wrap_FTAPIChannel_Callback_OnDisConnect_gofutuapi_b194613f40b0860d(FTAPIChannel_Callback *_swig_go_0, FTAPIChannelPtr _swig_go_1, long long _swig_go_2) {
   FTAPIChannel_Callback *arg1 = (FTAPIChannel_Callback *) 0 ;
   FTAPIChannelPtr arg2 = (FTAPIChannelPtr) 0 ;
   Futu::i64_t arg3 ;
@@ -1149,7 +1164,7 @@ void _wrap_FTAPIChannel_Callback_OnDisConnect_gofutuapi_d667299e3498665a(FTAPICh
 }
 
 
-void _wrap_FTAPIChannel_Callback_OnInitConnect_gofutuapi_d667299e3498665a(FTAPIChannel_Callback *_swig_go_0, FTAPIChannelPtr _swig_go_1, long long _swig_go_2, _gostring_ _swig_go_3) {
+void _wrap_FTAPIChannel_Callback_OnInitConnect_gofutuapi_b194613f40b0860d(FTAPIChannel_Callback *_swig_go_0, FTAPIChannelPtr _swig_go_1, long long _swig_go_2, _gostring_ _swig_go_3) {
   FTAPIChannel_Callback *arg1 = (FTAPIChannel_Callback *) 0 ;
   FTAPIChannelPtr arg2 = (FTAPIChannelPtr) 0 ;
   Futu::i64_t arg3 ;
@@ -1170,7 +1185,7 @@ void _wrap_FTAPIChannel_Callback_OnInitConnect_gofutuapi_d667299e3498665a(FTAPIC
 }
 
 
-void _wrap_FTAPIChannel_Callback_OnReply_gofutuapi_d667299e3498665a(FTAPIChannel_Callback *_swig_go_0, FTAPIChannelPtr _swig_go_1, intgo _swig_go_2, FTAPI_ProtoHeader *_swig_go_3, _gostring_ _swig_go_4) {
+void _wrap_FTAPIChannel_Callback_OnReply_gofutuapi_b194613f40b0860d(FTAPIChannel_Callback *_swig_go_0, FTAPIChannelPtr _swig_go_1, intgo _swig_go_2, FTAPI_ProtoHeader *_swig_go_3, _gostring_ _swig_go_4) {
   FTAPIChannel_Callback *arg1 = (FTAPIChannel_Callback *) 0 ;
   FTAPIChannelPtr arg2 = (FTAPIChannelPtr) 0 ;
   FTAPI_ReqReplyType arg3 ;
@@ -1183,16 +1198,21 @@ void _wrap_FTAPIChannel_Callback_OnReply_gofutuapi_d667299e3498665a(FTAPIChannel
   arg3 = (FTAPI_ReqReplyType)_swig_go_2; 
   arg4 = *(FTAPI_ProtoHeader **)&_swig_go_3; 
   
-  arg5 = (Futu::i8_t *) _swig_go_4.p;
+  arg5 = (Futu::i8_t *) malloc(_swig_go_4.n);
+  memcpy(arg5, _swig_go_4.p, _swig_go_4.n);
   arg6 = (Futu::i32_t) _swig_go_4.n;
-  
-  
+
   (arg1)->OnReply(arg2,arg3,(FTAPI_ProtoHeader const *)arg4,(Futu::i8_t const *)arg5,arg6);
+  
+  
+  {
+    free(arg5);
+  }
   
 }
 
 
-void _wrap_FTAPIChannel_Callback_OnPush_gofutuapi_d667299e3498665a(FTAPIChannel_Callback *_swig_go_0, FTAPIChannelPtr _swig_go_1, FTAPI_ProtoHeader *_swig_go_2, _gostring_ _swig_go_3) {
+void _wrap_FTAPIChannel_Callback_OnPush_gofutuapi_b194613f40b0860d(FTAPIChannel_Callback *_swig_go_0, FTAPIChannelPtr _swig_go_1, FTAPI_ProtoHeader *_swig_go_2, _gostring_ _swig_go_3) {
   FTAPIChannel_Callback *arg1 = (FTAPIChannel_Callback *) 0 ;
   FTAPIChannelPtr arg2 = (FTAPIChannelPtr) 0 ;
   FTAPI_ProtoHeader *arg3 = (FTAPI_ProtoHeader *) 0 ;
@@ -1203,16 +1223,22 @@ void _wrap_FTAPIChannel_Callback_OnPush_gofutuapi_d667299e3498665a(FTAPIChannel_
   arg2 = *(FTAPIChannelPtr *)&_swig_go_1; 
   arg3 = *(FTAPI_ProtoHeader **)&_swig_go_2; 
   
-  arg4 = (Futu::i8_t *) _swig_go_3.p;
+  arg4 = (Futu::i8_t *) malloc(_swig_go_3.n);
+  memcpy(arg4, _swig_go_3.p, _swig_go_3.n);
   arg5 = (Futu::i32_t) _swig_go_3.n;
   
-  
+
   (arg1)->OnPush(arg2,(FTAPI_ProtoHeader const *)arg3,(Futu::i8_t const *)arg4,arg5);
+  
+  
+  {
+    free(arg4);
+  }
   
 }
 
 
-void _wrap_delete_FTAPIChannel_Callback_gofutuapi_d667299e3498665a(FTAPIChannel_Callback *_swig_go_0) {
+void _wrap_delete_FTAPIChannel_Callback_gofutuapi_b194613f40b0860d(FTAPIChannel_Callback *_swig_go_0) {
   FTAPIChannel_Callback *arg1 = (FTAPIChannel_Callback *) 0 ;
   
   arg1 = *(FTAPIChannel_Callback **)&_swig_go_0; 

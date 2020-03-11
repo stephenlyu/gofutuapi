@@ -3,6 +3,7 @@ package futuapi
 import (
 	. "github.com/stephenlyu/gofutuapi"
 	"github.com/golang/protobuf/proto"
+	"fmt"
 )
 
 type FTAPIConnImpl struct {
@@ -14,6 +15,7 @@ func NewFTAPIConn() *FTAPIConnImpl {
 	conn := new(FTAPIConnImpl)
 
 	conn.channel = CreateFTAPIChannel()
+	println("channel: ", conn.channel);
 	FTAPIChannelSetCallbacks(conn.channel, NewDirectorFTAPIChannel_Callback(conn))
 
 	return conn
@@ -107,6 +109,8 @@ func (conn *FTAPIConnImpl) GetConnectID() uint64 {
 func (conn *FTAPIConnImpl) SendProto(protoID uint, req proto.Message) uint {
 	if (conn.channel != 0) {
 		data, _ := proto.Marshal(req)
+		fmt.Println(data)
+		fmt.Println(protoID, req.String())
 		return FTAPIChannel_SendProto(conn.channel, protoID, 0, string(data))
 	}
 	return 0
