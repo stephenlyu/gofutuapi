@@ -18,18 +18,18 @@ import (
 )
 
 type FTSPITrd interface {
-	OnReply_GetAccList(client *FTAPIConn, nSerialNo uint, rsp *Trd_GetAccList.Response) //获取交易账户列表回调
-	OnReply_UnlockTrade(client *FTAPIConn, nSerialNo uint, rsp *Trd_UnlockTrade.Response) //解锁回调
-	OnReply_SubAccPush(client *FTAPIConn, nSerialNo uint, rsp *Trd_SubAccPush.Response) //订阅接收推送数据的交易账户回调
-	OnReply_GetFunds(client *FTAPIConn, nSerialNo uint, rsp *Trd_GetFunds.Response) //获取账户资金回调
-	OnReply_GetPositionList(client *FTAPIConn, nSerialNo uint, rsp *Trd_GetPositionList.Response) //获取账户持仓回调
-	OnReply_GetMaxTrdQtys(client *FTAPIConn, nSerialNo uint, rsp *Trd_GetMaxTrdQtys.Response) //获取最大交易数量回调
-	OnReply_GetOrderList(client *FTAPIConn, nSerialNo uint, rsp *Trd_GetOrderList.Response) //获取当日订单列表回调
-	OnReply_PlaceOrder(client *FTAPIConn, nSerialNo uint, rsp *Trd_PlaceOrder.Response) //下单回调
-	OnReply_ModifyOrder(client *FTAPIConn, nSerialNo uint, rsp *Trd_ModifyOrder.Response) //修改订单回调
-	OnReply_GetOrderFillList(client *FTAPIConn, nSerialNo uint, rsp *Trd_GetOrderFillList.Response) //获取当日成交列表回调
-	OnReply_GetHistoryOrderList(client *FTAPIConn, nSerialNo uint, rsp *Trd_GetHistoryOrderList.Response) //获取历史订单列表回调
-	OnReply_GetHistoryOrderFillList(client *FTAPIConn, nSerialNo uint, rsp *Trd_GetHistoryOrderFillList.Response) //获取历史成交列表回调
-	OnPush_UpdateOrder(client *FTAPIConn, rsp *Trd_UpdateOrder.Response) //推送订单变化
-	OnPush_UpdateOrderFill(client *FTAPIConn, rsp *Trd_UpdateOrderFill.Response) //推送订单成交
+	OnReply_GetAccList(client FTAPIConnTrd, nSerialNo uint, rsp *Trd_GetAccList.Response) //获取交易账户列表回调
+	OnReply_UnlockTrade(client FTAPIConnTrd, nSerialNo uint, rsp *Trd_UnlockTrade.Response) //解锁回调
+	OnReply_SubAccPush(client FTAPIConnTrd, nSerialNo uint, rsp *Trd_SubAccPush.Response) //订阅接收推送数据的交易账户回调
+	OnReply_GetFunds(client FTAPIConnTrd, nSerialNo uint, rsp *Trd_GetFunds.Response) //获取账户资金回调
+	OnReply_GetPositionList(client FTAPIConnTrd, nSerialNo uint, rsp *Trd_GetPositionList.Response) //获取账户持仓回调
+	OnReply_GetMaxTrdQtys(client FTAPIConnTrd, nSerialNo uint, rsp *Trd_GetMaxTrdQtys.Response) //获取最大交易数量回调
+	OnReply_GetOrderList(client FTAPIConnTrd, nSerialNo uint, rsp *Trd_GetOrderList.Response) //获取当日订单列表回调
+	OnReply_PlaceOrder(client FTAPIConnTrd, nSerialNo uint, rsp *Trd_PlaceOrder.Response) //下单回调
+	OnReply_ModifyOrder(client FTAPIConnTrd, nSerialNo uint, rsp *Trd_ModifyOrder.Response) //修改订单回调
+	OnReply_GetOrderFillList(client FTAPIConnTrd, nSerialNo uint, rsp *Trd_GetOrderFillList.Response) //获取当日成交列表回调
+	OnReply_GetHistoryOrderList(client FTAPIConnTrd, nSerialNo uint, rsp *Trd_GetHistoryOrderList.Response) //获取历史订单列表回调
+	OnReply_GetHistoryOrderFillList(client FTAPIConnTrd, nSerialNo uint, rsp *Trd_GetHistoryOrderFillList.Response) //获取历史成交列表回调
+	OnPush_UpdateOrder(client FTAPIConnTrd, rsp *Trd_UpdateOrder.Response) //推送订单变化
+	OnPush_UpdateOrderFill(client FTAPIConnTrd, rsp *Trd_UpdateOrderFill.Response) //推送订单成交
 }

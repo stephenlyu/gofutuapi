@@ -20,29 +20,40 @@ import (
 	"github.com/stephenlyu/gofutuapi/futuproto/Trd_UpdateOrderFill"
 )
 
-type FTAPIConnTrd struct {
-	*FTAPIConn
+type FTAPIConnTrdImpl struct {
+	*FTAPIConnImpl
 	trdSpi FTSPITrd
 }
 
-func NewFTAPIConnTrd() *FTAPIConnTrd {
-	conn := new(FTAPIConnTrd)
-	conn.FTAPIConn = NewFTAPIConn()
+func NewFTAPIConnTrd() FTAPIConnTrd {
+	conn := new(FTAPIConnTrdImpl)
+	conn.FTAPIConnImpl = NewFTAPIConn()
 	FTAPIChannelSetCallbacks(conn.channel, NewDirectorFTAPIChannel_Callback(conn))
 	return conn
 }
 
-func (conn *FTAPIConnTrd) SetTrdSpi(trdSpi FTSPITrd) {
+func (conn *FTAPIConnTrdImpl) SetTrdSpi(trdSpi FTSPITrd) {
 	conn.trdSpi = trdSpi
 }
 
+func (conn *FTAPIConnTrdImpl) OnDisConnect(arg2 uintptr, arg3 int64) {
+	if conn.connSpi != nil {
+		conn.connSpi.OnDisconnect(conn, arg3)
+	}
+}
+
+func (conn *FTAPIConnTrdImpl) OnInitConnect(arg2 uintptr, arg3 int64, arg4 string) {
+	if conn.connSpi != nil {
+		conn.connSpi.OnInitConnect(conn, arg3, arg4)
+	}
+}
 
 /***
  * 获取交易账户列表，具体字段请参考Trd_GetAccList.proto协议
  * @param req
  * @return 请求的序列号
  */
-func (conn *FTAPIConnTrd) GetAccList(req *Trd_GetAccList.Request) uint {
+func (conn *FTAPIConnTrdImpl) GetAccList(req *Trd_GetAccList.Request) uint {
 	return conn.SendProto(TRD_GETACCLIST, req)
 }
 
@@ -51,7 +62,7 @@ func (conn *FTAPIConnTrd) GetAccList(req *Trd_GetAccList.Request) uint {
  * @param req
  * @return 请求的序列号
  */
-func (conn *FTAPIConnTrd) UnlockTrade(req *Trd_UnlockTrade.Request) uint {
+func (conn *FTAPIConnTrdImpl) UnlockTrade(req *Trd_UnlockTrade.Request) uint {
 	return conn.SendProto(TRD_UNLOCKTRADE, req)
 }
 
@@ -60,7 +71,7 @@ func (conn *FTAPIConnTrd) UnlockTrade(req *Trd_UnlockTrade.Request) uint {
  * @param req
  * @return 请求的序列号
  */
-func (conn *FTAPIConnTrd) SubAccPush(req *Trd_SubAccPush.Request) uint {
+func (conn *FTAPIConnTrdImpl) SubAccPush(req *Trd_SubAccPush.Request) uint {
 	return conn.SendProto(TRD_SUBACCPUSH, req)
 }
 
@@ -69,7 +80,7 @@ func (conn *FTAPIConnTrd) SubAccPush(req *Trd_SubAccPush.Request) uint {
  * @param req
  * @return 请求的序列号
  */
-func (conn *FTAPIConnTrd) GetFunds(req *Trd_GetFunds.Request) uint {
+func (conn *FTAPIConnTrdImpl) GetFunds(req *Trd_GetFunds.Request) uint {
 	return conn.SendProto(TRD_GETFUNDS, req)
 }
 
@@ -78,7 +89,7 @@ func (conn *FTAPIConnTrd) GetFunds(req *Trd_GetFunds.Request) uint {
  * @param req
  * @return 请求的序列号
  */
-func (conn *FTAPIConnTrd) GetPositionList(req *Trd_GetPositionList.Request) uint {
+func (conn *FTAPIConnTrdImpl) GetPositionList(req *Trd_GetPositionList.Request) uint {
 	return conn.SendProto(TRD_GETPOSITIONLIST, req)
 }
 
@@ -87,7 +98,7 @@ func (conn *FTAPIConnTrd) GetPositionList(req *Trd_GetPositionList.Request) uint
  * @param req
  * @return 请求的序列号
  */
-func (conn *FTAPIConnTrd) GetMaxTrdQtys(req *Trd_GetMaxTrdQtys.Request) uint {
+func (conn *FTAPIConnTrdImpl) GetMaxTrdQtys(req *Trd_GetMaxTrdQtys.Request) uint {
 	return conn.SendProto(TRD_GETMAXTRDQTYS, req)
 }
 
@@ -96,7 +107,7 @@ func (conn *FTAPIConnTrd) GetMaxTrdQtys(req *Trd_GetMaxTrdQtys.Request) uint {
  * @param req
  * @return 请求的序列号
  */
-func (conn *FTAPIConnTrd) GetOrderList(req *Trd_GetOrderList.Request) uint {
+func (conn *FTAPIConnTrdImpl) GetOrderList(req *Trd_GetOrderList.Request) uint {
 	return conn.SendProto(TRD_GETORDERLIST, req)
 }
 
@@ -105,7 +116,7 @@ func (conn *FTAPIConnTrd) GetOrderList(req *Trd_GetOrderList.Request) uint {
  * @param req
  * @return 请求的序列号
  */
-func (conn *FTAPIConnTrd) PlaceOrder(req *Trd_PlaceOrder.Request) uint {
+func (conn *FTAPIConnTrdImpl) PlaceOrder(req *Trd_PlaceOrder.Request) uint {
 	//    	if (req.hasC2S()) {
 	//    	    Common.PacketID packetID = nextPacketID()
 	//    	    req = req.toBuilder().setC2S(req.getC2S().toBuilder().setPacketID(packetID)).build()
@@ -118,7 +129,7 @@ func (conn *FTAPIConnTrd) PlaceOrder(req *Trd_PlaceOrder.Request) uint {
  * @param req
  * @return 请求的序列号
  */
-func (conn *FTAPIConnTrd) ModifyOrder(req *Trd_ModifyOrder.Request) uint {
+func (conn *FTAPIConnTrdImpl) ModifyOrder(req *Trd_ModifyOrder.Request) uint {
 	//        if (req.hasC2S()) {
 	//            Common.PacketID packetID = nextPacketID()
 	//            req = req.toBuilder().setC2S(req.getC2S().toBuilder().setPacketID(packetID)).build()
@@ -131,7 +142,7 @@ func (conn *FTAPIConnTrd) ModifyOrder(req *Trd_ModifyOrder.Request) uint {
  * @param req
  * @return 请求的序列号
  */
-func (conn *FTAPIConnTrd) GetOrderFillList(req *Trd_GetOrderFillList.Request) uint {
+func (conn *FTAPIConnTrdImpl) GetOrderFillList(req *Trd_GetOrderFillList.Request) uint {
 	return conn.SendProto(TRD_GETORDERFILLLIST, req)
 }
 
@@ -140,7 +151,7 @@ func (conn *FTAPIConnTrd) GetOrderFillList(req *Trd_GetOrderFillList.Request) ui
  * @param req
  * @return 请求的序列号
  */
-func (conn *FTAPIConnTrd) GetHistoryOrderList(req *Trd_GetHistoryOrderList.Request) uint {
+func (conn *FTAPIConnTrdImpl) GetHistoryOrderList(req *Trd_GetHistoryOrderList.Request) uint {
 	return conn.SendProto(TRD_GETHISTORYORDERLIST, req)
 }
 
@@ -149,11 +160,11 @@ func (conn *FTAPIConnTrd) GetHistoryOrderList(req *Trd_GetHistoryOrderList.Reque
  * @param req
  * @return 请求的序列号
  */
-func (conn *FTAPIConnTrd) GetHistoryOrderFillList(req *Trd_GetHistoryOrderFillList.Request) uint {
+func (conn *FTAPIConnTrdImpl) GetHistoryOrderFillList(req *Trd_GetHistoryOrderFillList.Request) uint {
 	return conn.SendProto(TRD_GETHISTORYORDERFILLLIST, req)
 }
 
-func (conn *FTAPIConnTrd) OnReply(arg2 uintptr, replyType FTAPI_ReqReplyType, arg4 FTAPI_ProtoHeader, arg5 string) {
+func (conn *FTAPIConnTrdImpl) OnReply(arg2 uintptr, replyType FTAPI_ReqReplyType, arg4 FTAPI_ProtoHeader, arg5 string) {
 	data := []byte(arg5)
 	protoID := arg4.GetNProtoID()
 	serialNo := arg4.GetNSerialNo()
@@ -176,7 +187,7 @@ func (conn *FTAPIConnTrd) OnReply(arg2 uintptr, replyType FTAPI_ReqReplyType, ar
 			rsp.RetType = &retType
 		}
 
-		conn.trdSpi.OnReply_GetAccList(conn.FTAPIConn, serialNo, &rsp)
+		conn.trdSpi.OnReply_GetAccList(conn, serialNo, &rsp)
 	}
 		break
 
@@ -193,7 +204,7 @@ func (conn *FTAPIConnTrd) OnReply(arg2 uintptr, replyType FTAPI_ReqReplyType, ar
 			rsp.RetType = &retType
 		}
 
-		conn.trdSpi.OnReply_GetFunds(conn.FTAPIConn, serialNo, &rsp)
+		conn.trdSpi.OnReply_GetFunds(conn, serialNo, &rsp)
 	}
 		break
 
@@ -210,7 +221,7 @@ func (conn *FTAPIConnTrd) OnReply(arg2 uintptr, replyType FTAPI_ReqReplyType, ar
 			rsp.RetType = &retType
 		}
 
-		conn.trdSpi.OnReply_GetHistoryOrderFillList(conn.FTAPIConn, serialNo, &rsp)
+		conn.trdSpi.OnReply_GetHistoryOrderFillList(conn, serialNo, &rsp)
 	}
 		break
 
@@ -227,7 +238,7 @@ func (conn *FTAPIConnTrd) OnReply(arg2 uintptr, replyType FTAPI_ReqReplyType, ar
 			rsp.RetType = &retType
 		}
 
-		conn.trdSpi.OnReply_GetHistoryOrderList(conn.FTAPIConn, serialNo, &rsp)
+		conn.trdSpi.OnReply_GetHistoryOrderList(conn, serialNo, &rsp)
 	}
 		break
 
@@ -244,7 +255,7 @@ func (conn *FTAPIConnTrd) OnReply(arg2 uintptr, replyType FTAPI_ReqReplyType, ar
 			rsp.RetType = &retType
 		}
 
-		conn.trdSpi.OnReply_GetMaxTrdQtys(conn.FTAPIConn, serialNo, &rsp)
+		conn.trdSpi.OnReply_GetMaxTrdQtys(conn, serialNo, &rsp)
 	}
 		break
 
@@ -261,7 +272,7 @@ func (conn *FTAPIConnTrd) OnReply(arg2 uintptr, replyType FTAPI_ReqReplyType, ar
 			rsp.RetType = &retType
 		}
 
-		conn.trdSpi.OnReply_GetOrderFillList(conn.FTAPIConn, serialNo, &rsp)
+		conn.trdSpi.OnReply_GetOrderFillList(conn, serialNo, &rsp)
 	}
 		break
 
@@ -278,7 +289,7 @@ func (conn *FTAPIConnTrd) OnReply(arg2 uintptr, replyType FTAPI_ReqReplyType, ar
 			rsp.RetType = &retType
 		}
 
-		conn.trdSpi.OnReply_GetOrderList(conn.FTAPIConn, serialNo, &rsp)
+		conn.trdSpi.OnReply_GetOrderList(conn, serialNo, &rsp)
 	}
 		break
 
@@ -295,7 +306,7 @@ func (conn *FTAPIConnTrd) OnReply(arg2 uintptr, replyType FTAPI_ReqReplyType, ar
 			rsp.RetType = &retType
 		}
 
-		conn.trdSpi.OnReply_GetPositionList(conn.FTAPIConn, serialNo, &rsp)
+		conn.trdSpi.OnReply_GetPositionList(conn, serialNo, &rsp)
 	}
 		break
 
@@ -312,7 +323,7 @@ func (conn *FTAPIConnTrd) OnReply(arg2 uintptr, replyType FTAPI_ReqReplyType, ar
 			rsp.RetType = &retType
 		}
 
-		conn.trdSpi.OnReply_ModifyOrder(conn.FTAPIConn, serialNo, &rsp)
+		conn.trdSpi.OnReply_ModifyOrder(conn, serialNo, &rsp)
 	}
 		break
 
@@ -330,7 +341,7 @@ func (conn *FTAPIConnTrd) OnReply(arg2 uintptr, replyType FTAPI_ReqReplyType, ar
 			rsp.RetType = &retType
 		}
 
-		conn.trdSpi.OnReply_PlaceOrder(conn.FTAPIConn, serialNo, &rsp)
+		conn.trdSpi.OnReply_PlaceOrder(conn, serialNo, &rsp)
 	}
 		break
 
@@ -348,7 +359,7 @@ func (conn *FTAPIConnTrd) OnReply(arg2 uintptr, replyType FTAPI_ReqReplyType, ar
 			rsp.RetType = &retType
 		}
 
-		conn.trdSpi.OnReply_SubAccPush(conn.FTAPIConn, serialNo, &rsp)
+		conn.trdSpi.OnReply_SubAccPush(conn, serialNo, &rsp)
 	}
 		break
 
@@ -365,13 +376,13 @@ func (conn *FTAPIConnTrd) OnReply(arg2 uintptr, replyType FTAPI_ReqReplyType, ar
 			rsp.RetType = &retType
 		}
 
-		conn.trdSpi.OnReply_UnlockTrade(conn.FTAPIConn, serialNo, &rsp)
+		conn.trdSpi.OnReply_UnlockTrade(conn, serialNo, &rsp)
 	}
 		break
 	}
 }
 
-func (conn *FTAPIConnTrd) OnPush(arg2 uintptr, arg3 FTAPI_ProtoHeader, arg4 string) {
+func (conn *FTAPIConnTrdImpl) OnPush(arg2 uintptr, arg3 FTAPI_ProtoHeader, arg4 string) {
 	protoID := arg3.GetNProtoID()
 
 	if (conn.trdSpi == nil) {
@@ -387,7 +398,7 @@ func (conn *FTAPIConnTrd) OnPush(arg2 uintptr, arg3 FTAPI_ProtoHeader, arg4 stri
 			retType = int32(Common.RetType_RetType_Invalid)
 			rsp.RetType = &retType
 		}
-		conn.trdSpi.OnPush_UpdateOrder(conn.FTAPIConn, &rsp)
+		conn.trdSpi.OnPush_UpdateOrder(conn, &rsp)
 	}
 		break
 	case TRD_UPDATEORDERFILL: {
@@ -397,7 +408,7 @@ func (conn *FTAPIConnTrd) OnPush(arg2 uintptr, arg3 FTAPI_ProtoHeader, arg4 stri
 			retType = int32(Common.RetType_RetType_Invalid)
 			rsp.RetType = &retType
 		}
-		conn.trdSpi.OnPush_UpdateOrderFill(conn.FTAPIConn, &rsp)
+		conn.trdSpi.OnPush_UpdateOrderFill(conn, &rsp)
 	}
 		break
 	}

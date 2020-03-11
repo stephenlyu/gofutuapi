@@ -7,12 +7,12 @@ type FTSpiConn interface {
 	 * @param errCode 错误码。当高32位为ConnectFailType类型时，低32位为系统错误码；当高32位等于FTAPI.INIT_FAIL，则低32位为InitFailType类型。
 	 * @param desc 错误描述
 	 */
-	OnInitConnect(conn *FTAPIConn, errCode int64, desc string)
+	OnInitConnect(client FTAPIConn, errCode int64, desc string)
 
 	/***
 	 * 与OpenD的连接断开
 	 * @param client
 	 * @param errCode
 	 */
-	OnDisconnect(client *FTAPIConn, errCode int64)
+	OnDisconnect(client FTAPIConn, errCode int64)
 }

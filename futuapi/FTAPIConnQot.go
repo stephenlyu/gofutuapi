@@ -44,21 +44,33 @@ import (
 	"github.com/stephenlyu/gofutuapi/futuproto/Qot_UpdateTicker"
 )
 
-type FTAPIConnQot struct {
-	*FTAPIConn
+type FTAPIConnQotImpl struct {
+	*FTAPIConnImpl
 	qotSpi FTSPIQot
 }
 
-func NewFTAPIConnQot() *FTAPIConnQot {
-	conn := new(FTAPIConnQot)
-	conn.FTAPIConn = NewFTAPIConn()
+func NewFTAPIConnQot() FTAPIConnQot {
+	conn := new(FTAPIConnQotImpl)
+	conn.FTAPIConnImpl = NewFTAPIConn()
 	FTAPIChannelSetCallbacks(conn.channel, NewDirectorFTAPIChannel_Callback(conn))
 
 	return conn
 }
 
-func (conn *FTAPIConnQot) SetQotSpi(qotSpi FTSPIQot) {
+func (conn *FTAPIConnQotImpl) SetQotSpi(qotSpi FTSPIQot) {
 	conn.qotSpi = qotSpi
+}
+
+func (conn *FTAPIConnQotImpl) OnDisConnect(arg2 uintptr, arg3 int64) {
+	if conn.connSpi != nil {
+		conn.connSpi.OnDisconnect(conn, arg3)
+	}
+}
+
+func (conn *FTAPIConnQotImpl) OnInitConnect(arg2 uintptr, arg3 int64, arg4 string) {
+	if conn.connSpi != nil {
+		conn.connSpi.OnInitConnect(conn, arg3, arg4)
+	}
 }
 
 /***
@@ -66,7 +78,7 @@ func (conn *FTAPIConnQot) SetQotSpi(qotSpi FTSPIQot) {
  * @param req
  * @return 请求的序列号
  */
-func (conn *FTAPIConnQot) GetGlobalState(req *GetGlobalState.Request) uint {
+func (conn *FTAPIConnQotImpl) GetGlobalState(req *GetGlobalState.Request) uint {
 	return conn.SendProto(GETGLOBALSTATE, req)
 }
 
@@ -75,7 +87,7 @@ func (conn *FTAPIConnQot) GetGlobalState(req *GetGlobalState.Request) uint {
  * @param req
  * @return 请求的序列号
  */
-func (conn *FTAPIConnQot) Sub(req *Qot_Sub.Request) uint {
+func (conn *FTAPIConnQotImpl) Sub(req *Qot_Sub.Request) uint {
 	return conn.SendProto(QOT_SUB, req)
 }
 
@@ -84,7 +96,7 @@ func (conn *FTAPIConnQot) Sub(req *Qot_Sub.Request) uint {
  * @param req
  * @return 请求的序列号
  */
-func (conn *FTAPIConnQot) RegQotPush(req *Qot_RegQotPush.Request) uint {
+func (conn *FTAPIConnQotImpl) RegQotPush(req *Qot_RegQotPush.Request) uint {
 	return conn.SendProto(QOT_REGQOTPUSH, req)
 }
 
@@ -93,7 +105,7 @@ func (conn *FTAPIConnQot) RegQotPush(req *Qot_RegQotPush.Request) uint {
  * @param req
  * @return 请求的序列号
  */
-func (conn *FTAPIConnQot) GetSubInfo(req *Qot_GetSubInfo.Request) uint {
+func (conn *FTAPIConnQotImpl) GetSubInfo(req *Qot_GetSubInfo.Request) uint {
 	return conn.SendProto(QOT_GETSUBINFO, req)
 }
 
@@ -102,7 +114,7 @@ func (conn *FTAPIConnQot) GetSubInfo(req *Qot_GetSubInfo.Request) uint {
  * @param req
  * @return 请求的序列号
  */
-func (conn *FTAPIConnQot) GetTicker(req *Qot_GetTicker.Request) uint {
+func (conn *FTAPIConnQotImpl) GetTicker(req *Qot_GetTicker.Request) uint {
 	return conn.SendProto(QOT_GETTICKER, req)
 }
 
@@ -111,7 +123,7 @@ func (conn *FTAPIConnQot) GetTicker(req *Qot_GetTicker.Request) uint {
  * @param req
  * @return 请求的序列号
  */
-func (conn *FTAPIConnQot) GetBasicQot(req *Qot_GetBasicQot.Request) uint {
+func (conn *FTAPIConnQotImpl) GetBasicQot(req *Qot_GetBasicQot.Request) uint {
 	return conn.SendProto(QOT_GETBASICQOT, req)
 }
 
@@ -120,7 +132,7 @@ func (conn *FTAPIConnQot) GetBasicQot(req *Qot_GetBasicQot.Request) uint {
  * @param req
  * @return 请求的序列号
  */
-func (conn *FTAPIConnQot) GetOrderBook(req *Qot_GetOrderBook.Request) uint {
+func (conn *FTAPIConnQotImpl) GetOrderBook(req *Qot_GetOrderBook.Request) uint {
 	return conn.SendProto(QOT_GETORDERBOOK, req)
 }
 
@@ -129,7 +141,7 @@ func (conn *FTAPIConnQot) GetOrderBook(req *Qot_GetOrderBook.Request) uint {
  * @param req
  * @return 请求的序列号
  */
-func (conn *FTAPIConnQot) GetKL(req *Qot_GetKL.Request) uint {
+func (conn *FTAPIConnQotImpl) GetKL(req *Qot_GetKL.Request) uint {
 	return conn.SendProto(QOT_GETKL, req)
 }
 
@@ -138,7 +150,7 @@ func (conn *FTAPIConnQot) GetKL(req *Qot_GetKL.Request) uint {
  * @param req
  * @return 请求的序列号
  */
-func (conn *FTAPIConnQot) GetRT(req *Qot_GetRT.Request) uint {
+func (conn *FTAPIConnQotImpl) GetRT(req *Qot_GetRT.Request) uint {
 	return conn.SendProto(QOT_GETRT, req)
 }
 
@@ -147,7 +159,7 @@ func (conn *FTAPIConnQot) GetRT(req *Qot_GetRT.Request) uint {
  * @param req
  * @return 请求的序列号
  */
-func (conn *FTAPIConnQot) GetBroker(req *Qot_GetBroker.Request) uint {
+func (conn *FTAPIConnQotImpl) GetBroker(req *Qot_GetBroker.Request) uint {
 	return conn.SendProto(QOT_GETBROKER, req)
 }
 
@@ -156,7 +168,7 @@ func (conn *FTAPIConnQot) GetBroker(req *Qot_GetBroker.Request) uint {
  * @param req
  * @return 请求的序列号
  */
-func (conn *FTAPIConnQot) RequestRehab(req *Qot_RequestRehab.Request) uint {
+func (conn *FTAPIConnQotImpl) RequestRehab(req *Qot_RequestRehab.Request) uint {
 	return conn.SendProto(QOT_REQUESTREHAB, req)
 }
 
@@ -165,7 +177,7 @@ func (conn *FTAPIConnQot) RequestRehab(req *Qot_RequestRehab.Request) uint {
  * @param req
  * @return 请求的序列号
  */
-func (conn *FTAPIConnQot) RequestHistoryKL(req *Qot_RequestHistoryKL.Request) uint {
+func (conn *FTAPIConnQotImpl) RequestHistoryKL(req *Qot_RequestHistoryKL.Request) uint {
 	return conn.SendProto(QOT_REQUESTHISTORYKL, req)
 }
 
@@ -174,7 +186,7 @@ func (conn *FTAPIConnQot) RequestHistoryKL(req *Qot_RequestHistoryKL.Request) ui
  * @param req
  * @return 请求的序列号
  */
-func (conn *FTAPIConnQot) RequestHistoryKLQuota(req *Qot_RequestHistoryKLQuota.Request) uint {
+func (conn *FTAPIConnQotImpl) RequestHistoryKLQuota(req *Qot_RequestHistoryKLQuota.Request) uint {
 	return conn.SendProto(QOT_REQUESTHISTORYKLQUOTA, req)
 }
 
@@ -183,7 +195,7 @@ func (conn *FTAPIConnQot) RequestHistoryKLQuota(req *Qot_RequestHistoryKLQuota.R
  * @param req
  * @return 请求的序列号
  */
-func (conn *FTAPIConnQot) GetTradeDate(req *Qot_GetTradeDate.Request) uint {
+func (conn *FTAPIConnQotImpl) GetTradeDate(req *Qot_GetTradeDate.Request) uint {
 	return conn.SendProto(QOT_GETTRADEDATE, req)
 }
 
@@ -192,7 +204,7 @@ func (conn *FTAPIConnQot) GetTradeDate(req *Qot_GetTradeDate.Request) uint {
  * @param req
  * @return 请求的序列号
  */
-func (conn *FTAPIConnQot) GetStaticInfo(req *Qot_GetStaticInfo.Request) uint {
+func (conn *FTAPIConnQotImpl) GetStaticInfo(req *Qot_GetStaticInfo.Request) uint {
 	return conn.SendProto(QOT_GETSTATICINFO, req)
 }
 
@@ -201,7 +213,7 @@ func (conn *FTAPIConnQot) GetStaticInfo(req *Qot_GetStaticInfo.Request) uint {
  * @param req
  * @return 请求的序列号
  */
-func (conn *FTAPIConnQot) GetSecuritySnapshot(req *Qot_GetSecuritySnapshot.Request) uint {
+func (conn *FTAPIConnQotImpl) GetSecuritySnapshot(req *Qot_GetSecuritySnapshot.Request) uint {
 	return conn.SendProto(QOT_GETSECURITYSNAPSHOT, req)
 }
 
@@ -210,7 +222,7 @@ func (conn *FTAPIConnQot) GetSecuritySnapshot(req *Qot_GetSecuritySnapshot.Reque
  * @param req
  * @return 请求的序列号
  */
-func (conn *FTAPIConnQot) GetPlateSet(req *Qot_GetPlateSet.Request) uint {
+func (conn *FTAPIConnQotImpl) GetPlateSet(req *Qot_GetPlateSet.Request) uint {
 	return conn.SendProto(QOT_GETPLATESET, req)
 }
 
@@ -219,7 +231,7 @@ func (conn *FTAPIConnQot) GetPlateSet(req *Qot_GetPlateSet.Request) uint {
  * @param req
  * @return 请求的序列号
  */
-func (conn *FTAPIConnQot) GetPlateSecurity(req *Qot_GetPlateSecurity.Request) uint {
+func (conn *FTAPIConnQotImpl) GetPlateSecurity(req *Qot_GetPlateSecurity.Request) uint {
 	return conn.SendProto(QOT_GETPLATESECURITY, req)
 }
 
@@ -228,7 +240,7 @@ func (conn *FTAPIConnQot) GetPlateSecurity(req *Qot_GetPlateSecurity.Request) ui
  * @param req
  * @return 请求的序列号
  */
-func (conn *FTAPIConnQot) GetReference(req *Qot_GetReference.Request) uint {
+func (conn *FTAPIConnQotImpl) GetReference(req *Qot_GetReference.Request) uint {
 	return conn.SendProto(QOT_GETREFERENCE, req)
 }
 
@@ -237,7 +249,7 @@ func (conn *FTAPIConnQot) GetReference(req *Qot_GetReference.Request) uint {
  * @param req
  * @return 请求的序列号
  */
-func (conn *FTAPIConnQot) GetOwnerPlate(req *Qot_GetOwnerPlate.Request) uint {
+func (conn *FTAPIConnQotImpl) GetOwnerPlate(req *Qot_GetOwnerPlate.Request) uint {
 	return conn.SendProto(QOT_GETOWNERPLATE, req)
 }
 
@@ -246,7 +258,7 @@ func (conn *FTAPIConnQot) GetOwnerPlate(req *Qot_GetOwnerPlate.Request) uint {
  * @param req
  * @return 请求的序列号
  */
-func (conn *FTAPIConnQot) GetHoldingChangeList(req *Qot_GetHoldingChangeList.Request) uint {
+func (conn *FTAPIConnQotImpl) GetHoldingChangeList(req *Qot_GetHoldingChangeList.Request) uint {
 	return conn.SendProto(QOT_GETHOLDINGCHANGELIST, req)
 }
 
@@ -255,7 +267,7 @@ func (conn *FTAPIConnQot) GetHoldingChangeList(req *Qot_GetHoldingChangeList.Req
  * @param req
  * @return 请求的序列号
  */
-func (conn *FTAPIConnQot) GetOptionChain(req *Qot_GetOptionChain.Request) uint {
+func (conn *FTAPIConnQotImpl) GetOptionChain(req *Qot_GetOptionChain.Request) uint {
 	return conn.SendProto(QOT_GETOPTIONCHAIN, req)
 }
 
@@ -264,7 +276,7 @@ func (conn *FTAPIConnQot) GetOptionChain(req *Qot_GetOptionChain.Request) uint {
  * @param req
  * @return 请求的序列号
  */
-func (conn *FTAPIConnQot) GetWarrant(req *Qot_GetWarrant.Request) uint {
+func (conn *FTAPIConnQotImpl) GetWarrant(req *Qot_GetWarrant.Request) uint {
 	return conn.SendProto(QOT_GETWARRANT, req)
 }
 
@@ -273,7 +285,7 @@ func (conn *FTAPIConnQot) GetWarrant(req *Qot_GetWarrant.Request) uint {
  * @param req
  * @return 请求的序列号
  */
-func (conn *FTAPIConnQot) GetCapitalFlow(req *Qot_GetCapitalFlow.Request) uint {
+func (conn *FTAPIConnQotImpl) GetCapitalFlow(req *Qot_GetCapitalFlow.Request) uint {
 	return conn.SendProto(QOT_GETCAPITALFLOW, req)
 }
 
@@ -282,7 +294,7 @@ func (conn *FTAPIConnQot) GetCapitalFlow(req *Qot_GetCapitalFlow.Request) uint {
  * @param req
  * @return 请求的序列号
  */
-func (conn *FTAPIConnQot) GetCapitalDistribution(req *Qot_GetCapitalDistribution.Request) uint {
+func (conn *FTAPIConnQotImpl) GetCapitalDistribution(req *Qot_GetCapitalDistribution.Request) uint {
 	return conn.SendProto(QOT_GETCAPITALDISTRIBUTION, req)
 }
 
@@ -291,7 +303,7 @@ func (conn *FTAPIConnQot) GetCapitalDistribution(req *Qot_GetCapitalDistribution
  * @param req
  * @return 请求的序列号
  */
-func (conn *FTAPIConnQot) GetUserSecurity(req *Qot_GetUserSecurity.Request) uint {
+func (conn *FTAPIConnQotImpl) GetUserSecurity(req *Qot_GetUserSecurity.Request) uint {
 	return conn.SendProto(QOT_GETUSERSECURITY, req)
 }
 
@@ -300,7 +312,7 @@ func (conn *FTAPIConnQot) GetUserSecurity(req *Qot_GetUserSecurity.Request) uint
  * @param req
  * @return 请求的序列号
  */
-func (conn *FTAPIConnQot) ModifyUserSecurity(req *Qot_ModifyUserSecurity.Request) uint {
+func (conn *FTAPIConnQotImpl) ModifyUserSecurity(req *Qot_ModifyUserSecurity.Request) uint {
 	return conn.SendProto(QOT_MODIFYUSERSECURITY, req)
 }
 
@@ -309,7 +321,7 @@ func (conn *FTAPIConnQot) ModifyUserSecurity(req *Qot_ModifyUserSecurity.Request
  * @param req
  * @return 请求的序列号
  */
-func (conn *FTAPIConnQot) StockFilter(req *Qot_StockFilter.Request) uint {
+func (conn *FTAPIConnQotImpl) StockFilter(req *Qot_StockFilter.Request) uint {
 	return conn.SendProto(QOT_STOCKFILTER, req)
 }
 
@@ -318,7 +330,7 @@ func (conn *FTAPIConnQot) StockFilter(req *Qot_StockFilter.Request) uint {
  * @param req
  * @return 请求的序列号
  */
-func (conn *FTAPIConnQot) GetCodeChange(req *Qot_GetCodeChange.Request) uint {
+func (conn *FTAPIConnQotImpl) GetCodeChange(req *Qot_GetCodeChange.Request) uint {
 	return conn.SendProto(QOT_GETCODECHANGE, req)
 }
 /***
@@ -326,7 +338,7 @@ func (conn *FTAPIConnQot) GetCodeChange(req *Qot_GetCodeChange.Request) uint {
  * @param req
  * @return 请求的序列号
  */
-func (conn *FTAPIConnQot) GetIpoList(req *Qot_GetIpoList.Request) uint {
+func (conn *FTAPIConnQotImpl) GetIpoList(req *Qot_GetIpoList.Request) uint {
 	return conn.SendProto(QOT_GETIPOLIST, req)
 }
 /***
@@ -334,11 +346,11 @@ func (conn *FTAPIConnQot) GetIpoList(req *Qot_GetIpoList.Request) uint {
  * @param req
  * @return 请求的序列号
  */
-func (conn *FTAPIConnQot) GetFutureInfo(req *Qot_GetFutureInfo.Request) uint {
+func (conn *FTAPIConnQotImpl) GetFutureInfo(req *Qot_GetFutureInfo.Request) uint {
 	return conn.SendProto(QOT_GETFUTUREINFO, req)
 }
 
-func (conn *FTAPIConnQot) OnReply(replyType FTAPI_ReqReplyType, protoHeader FTAPI_ProtoHeader, str string) {
+func (conn *FTAPIConnQotImpl) OnReply(arg2 uintptr, replyType FTAPI_ReqReplyType, protoHeader FTAPI_ProtoHeader, str string) {
 	data := []byte(str)
 	protoID := protoHeader.GetNProtoID()
 	serialNo := protoHeader.GetNSerialNo()
@@ -360,7 +372,7 @@ func (conn *FTAPIConnQot) OnReply(replyType FTAPI_ReqReplyType, protoHeader FTAP
 				retType = int32(replyType)
 				rsp.RetType = &retType
 			}
-			conn.qotSpi.OnReply_GetGlobalState(conn.FTAPIConn, serialNo, &rsp)
+			conn.qotSpi.OnReply_GetGlobalState(conn, serialNo, &rsp)
 		}
 		break
 
@@ -377,7 +389,7 @@ func (conn *FTAPIConnQot) OnReply(replyType FTAPI_ReqReplyType, protoHeader FTAP
 			rsp.RetType = &retType
 		}
 
-		conn.qotSpi.OnReply_GetBasicQot(conn.FTAPIConn, serialNo, &rsp)
+		conn.qotSpi.OnReply_GetBasicQot(conn, serialNo, &rsp)
 	}
 		break
 
@@ -394,7 +406,7 @@ func (conn *FTAPIConnQot) OnReply(replyType FTAPI_ReqReplyType, protoHeader FTAP
 			rsp.RetType = &retType
 		}
 
-		conn.qotSpi.OnReply_GetBroker(conn.FTAPIConn, serialNo, &rsp)
+		conn.qotSpi.OnReply_GetBroker(conn, serialNo, &rsp)
 	}
 		break
 
@@ -411,7 +423,7 @@ func (conn *FTAPIConnQot) OnReply(replyType FTAPI_ReqReplyType, protoHeader FTAP
 			rsp.RetType = &retType
 		}
 
-		conn.qotSpi.OnReply_GetCapitalDistribution(conn.FTAPIConn, serialNo, &rsp)
+		conn.qotSpi.OnReply_GetCapitalDistribution(conn, serialNo, &rsp)
 	}
 		break
 
@@ -428,7 +440,7 @@ func (conn *FTAPIConnQot) OnReply(replyType FTAPI_ReqReplyType, protoHeader FTAP
 			rsp.RetType = &retType
 		}
 
-		conn.qotSpi.OnReply_GetCapitalFlow(conn.FTAPIConn, serialNo, &rsp)
+		conn.qotSpi.OnReply_GetCapitalFlow(conn, serialNo, &rsp)
 	}
 		break
 
@@ -445,7 +457,7 @@ func (conn *FTAPIConnQot) OnReply(replyType FTAPI_ReqReplyType, protoHeader FTAP
 			rsp.RetType = &retType
 		}
 
-		conn.qotSpi.OnReply_GetCodeChange(conn.FTAPIConn, serialNo, &rsp)
+		conn.qotSpi.OnReply_GetCodeChange(conn, serialNo, &rsp)
 	}
 		break
 
@@ -462,7 +474,7 @@ func (conn *FTAPIConnQot) OnReply(replyType FTAPI_ReqReplyType, protoHeader FTAP
 		//		rsp.RetType = &retType
 		//	}
 		//
-		//	conn.qotSpi.OnReply_GetHistoryKL(conn.FTAPIConn, serialNo, &rsp)
+		//	conn.qotSpi.OnReply_GetHistoryKL(conn, serialNo, &rsp)
 	}
 		break
 
@@ -479,7 +491,7 @@ func (conn *FTAPIConnQot) OnReply(replyType FTAPI_ReqReplyType, protoHeader FTAP
 		//	rsp.RetType = &retType
 		//}
 		//
-		//conn.qotSpi.OnReply_GetHistoryKLPoints(conn.FTAPIConn, serialNo, &rsp)
+		//conn.qotSpi.OnReply_GetHistoryKLPoints(conn, serialNo, &rsp)
 	}
 		break
 
@@ -496,7 +508,7 @@ func (conn *FTAPIConnQot) OnReply(replyType FTAPI_ReqReplyType, protoHeader FTAP
 			rsp.RetType = &retType
 		}
 
-		conn.qotSpi.OnReply_GetHoldingChangeList(conn.FTAPIConn, serialNo, &rsp)
+		conn.qotSpi.OnReply_GetHoldingChangeList(conn, serialNo, &rsp)
 	}
 		break
 
@@ -513,7 +525,7 @@ func (conn *FTAPIConnQot) OnReply(replyType FTAPI_ReqReplyType, protoHeader FTAP
 			rsp.RetType = &retType
 		}
 
-		conn.qotSpi.OnReply_GetKL(conn.FTAPIConn, serialNo, &rsp)
+		conn.qotSpi.OnReply_GetKL(conn, serialNo, &rsp)
 	}
 		break
 
@@ -530,7 +542,7 @@ func (conn *FTAPIConnQot) OnReply(replyType FTAPI_ReqReplyType, protoHeader FTAP
 			rsp.RetType = &retType
 		}
 
-		conn.qotSpi.OnReply_GetOptionChain(conn.FTAPIConn, serialNo, &rsp)
+		conn.qotSpi.OnReply_GetOptionChain(conn, serialNo, &rsp)
 	}
 		break
 
@@ -547,7 +559,7 @@ func (conn *FTAPIConnQot) OnReply(replyType FTAPI_ReqReplyType, protoHeader FTAP
 			rsp.RetType = &retType
 		}
 
-		conn.qotSpi.OnReply_GetOrderBook(conn.FTAPIConn, serialNo, &rsp)
+		conn.qotSpi.OnReply_GetOrderBook(conn, serialNo, &rsp)
 	}
 		break
 
@@ -564,7 +576,7 @@ func (conn *FTAPIConnQot) OnReply(replyType FTAPI_ReqReplyType, protoHeader FTAP
 			rsp.RetType = &retType
 		}
 
-		conn.qotSpi.OnReply_GetOwnerPlate(conn.FTAPIConn, serialNo, &rsp)
+		conn.qotSpi.OnReply_GetOwnerPlate(conn, serialNo, &rsp)
 	}
 		break
 
@@ -581,7 +593,7 @@ func (conn *FTAPIConnQot) OnReply(replyType FTAPI_ReqReplyType, protoHeader FTAP
 			rsp.RetType = &retType
 		}
 
-		conn.qotSpi.OnReply_GetPlateSecurity(conn.FTAPIConn, serialNo, &rsp)
+		conn.qotSpi.OnReply_GetPlateSecurity(conn, serialNo, &rsp)
 	}
 		break
 
@@ -598,7 +610,7 @@ func (conn *FTAPIConnQot) OnReply(replyType FTAPI_ReqReplyType, protoHeader FTAP
 			rsp.RetType = &retType
 		}
 
-		conn.qotSpi.OnReply_GetPlateSet(conn.FTAPIConn, serialNo, &rsp)
+		conn.qotSpi.OnReply_GetPlateSet(conn, serialNo, &rsp)
 	}
 		break
 
@@ -615,7 +627,7 @@ func (conn *FTAPIConnQot) OnReply(replyType FTAPI_ReqReplyType, protoHeader FTAP
 			rsp.RetType = &retType
 		}
 
-		conn.qotSpi.OnReply_GetReference(conn.FTAPIConn, serialNo, &rsp)
+		conn.qotSpi.OnReply_GetReference(conn, serialNo, &rsp)
 	}
 		break
 
@@ -632,7 +644,7 @@ func (conn *FTAPIConnQot) OnReply(replyType FTAPI_ReqReplyType, protoHeader FTAP
 		//	rsp.RetType = &retType
 		//}
 		//
-		//conn.qotSpi.OnReply_GetRehab(conn.FTAPIConn, serialNo, &rsp)
+		//conn.qotSpi.OnReply_GetRehab(conn, serialNo, &rsp)
 	}
 		break
 
@@ -649,7 +661,7 @@ func (conn *FTAPIConnQot) OnReply(replyType FTAPI_ReqReplyType, protoHeader FTAP
 			rsp.RetType = &retType
 		}
 
-		conn.qotSpi.OnReply_GetRT(conn.FTAPIConn, serialNo, &rsp)
+		conn.qotSpi.OnReply_GetRT(conn, serialNo, &rsp)
 	}
 		break
 
@@ -666,7 +678,7 @@ func (conn *FTAPIConnQot) OnReply(replyType FTAPI_ReqReplyType, protoHeader FTAP
 			rsp.RetType = &retType
 		}
 
-		conn.qotSpi.OnReply_GetSecuritySnapshot(conn.FTAPIConn, serialNo, &rsp)
+		conn.qotSpi.OnReply_GetSecuritySnapshot(conn, serialNo, &rsp)
 	}
 		break
 
@@ -683,7 +695,7 @@ func (conn *FTAPIConnQot) OnReply(replyType FTAPI_ReqReplyType, protoHeader FTAP
 			rsp.RetType = &retType
 		}
 
-		conn.qotSpi.OnReply_GetStaticInfo(conn.FTAPIConn, serialNo, &rsp)
+		conn.qotSpi.OnReply_GetStaticInfo(conn, serialNo, &rsp)
 	}
 		break
 
@@ -700,7 +712,7 @@ func (conn *FTAPIConnQot) OnReply(replyType FTAPI_ReqReplyType, protoHeader FTAP
 			rsp.RetType = &retType
 		}
 
-		conn.qotSpi.OnReply_GetSubInfo(conn.FTAPIConn, serialNo, &rsp)
+		conn.qotSpi.OnReply_GetSubInfo(conn, serialNo, &rsp)
 	}
 		break
 
@@ -718,7 +730,7 @@ func (conn *FTAPIConnQot) OnReply(replyType FTAPI_ReqReplyType, protoHeader FTAP
 			rsp.RetType = &retType
 		}
 
-		conn.qotSpi.OnReply_GetTicker(conn.FTAPIConn, serialNo, &rsp)
+		conn.qotSpi.OnReply_GetTicker(conn, serialNo, &rsp)
 	}
 		break
 
@@ -735,7 +747,7 @@ func (conn *FTAPIConnQot) OnReply(replyType FTAPI_ReqReplyType, protoHeader FTAP
 			rsp.RetType = &retType
 		}
 
-		conn.qotSpi.OnReply_GetTradeDate(conn.FTAPIConn, serialNo, &rsp)
+		conn.qotSpi.OnReply_GetTradeDate(conn, serialNo, &rsp)
 	}
 		break
 
@@ -752,7 +764,7 @@ func (conn *FTAPIConnQot) OnReply(replyType FTAPI_ReqReplyType, protoHeader FTAP
 			rsp.RetType = &retType
 		}
 
-		conn.qotSpi.OnReply_GetUserSecurity(conn.FTAPIConn, serialNo, &rsp)
+		conn.qotSpi.OnReply_GetUserSecurity(conn, serialNo, &rsp)
 	}
 		break
 
@@ -769,7 +781,7 @@ func (conn *FTAPIConnQot) OnReply(replyType FTAPI_ReqReplyType, protoHeader FTAP
 			rsp.RetType = &retType
 		}
 
-		conn.qotSpi.OnReply_GetWarrant(conn.FTAPIConn, serialNo, &rsp)
+		conn.qotSpi.OnReply_GetWarrant(conn, serialNo, &rsp)
 	}
 		break
 
@@ -786,7 +798,7 @@ func (conn *FTAPIConnQot) OnReply(replyType FTAPI_ReqReplyType, protoHeader FTAP
 			rsp.RetType = &retType
 		}
 
-		conn.qotSpi.OnReply_ModifyUserSecurity(conn.FTAPIConn, serialNo, &rsp)
+		conn.qotSpi.OnReply_ModifyUserSecurity(conn, serialNo, &rsp)
 	}
 		break
 
@@ -803,7 +815,7 @@ func (conn *FTAPIConnQot) OnReply(replyType FTAPI_ReqReplyType, protoHeader FTAP
 			rsp.RetType = &retType
 		}
 
-		conn.qotSpi.OnReply_RegQotPush(conn.FTAPIConn, serialNo, &rsp)
+		conn.qotSpi.OnReply_RegQotPush(conn, serialNo, &rsp)
 	}
 		break
 
@@ -820,7 +832,7 @@ func (conn *FTAPIConnQot) OnReply(replyType FTAPI_ReqReplyType, protoHeader FTAP
 			rsp.RetType = &retType
 		}
 
-		conn.qotSpi.OnReply_RequestHistoryKL(conn.FTAPIConn, serialNo, &rsp)
+		conn.qotSpi.OnReply_RequestHistoryKL(conn, serialNo, &rsp)
 	}
 		break
 
@@ -837,7 +849,7 @@ func (conn *FTAPIConnQot) OnReply(replyType FTAPI_ReqReplyType, protoHeader FTAP
 			rsp.RetType = &retType
 		}
 
-		conn.qotSpi.OnReply_RequestHistoryKLQuota(conn.FTAPIConn, serialNo, &rsp)
+		conn.qotSpi.OnReply_RequestHistoryKLQuota(conn, serialNo, &rsp)
 	}
 		break
 
@@ -854,7 +866,7 @@ func (conn *FTAPIConnQot) OnReply(replyType FTAPI_ReqReplyType, protoHeader FTAP
 			rsp.RetType = &retType
 		}
 
-		conn.qotSpi.OnReply_RequestRehab(conn.FTAPIConn, serialNo, &rsp)
+		conn.qotSpi.OnReply_RequestRehab(conn, serialNo, &rsp)
 	}
 		break
 
@@ -871,7 +883,7 @@ func (conn *FTAPIConnQot) OnReply(replyType FTAPI_ReqReplyType, protoHeader FTAP
 			rsp.RetType = &retType
 		}
 
-		conn.qotSpi.OnReply_StockFilter(conn.FTAPIConn, serialNo, &rsp)
+		conn.qotSpi.OnReply_StockFilter(conn, serialNo, &rsp)
 	}
 		break
 
@@ -888,7 +900,7 @@ func (conn *FTAPIConnQot) OnReply(replyType FTAPI_ReqReplyType, protoHeader FTAP
 			rsp.RetType = &retType
 		}
 
-		conn.qotSpi.OnReply_Sub(conn.FTAPIConn, serialNo, &rsp)
+		conn.qotSpi.OnReply_Sub(conn, serialNo, &rsp)
 	}
 		break
 	case QOT_GETIPOLIST: {
@@ -904,7 +916,7 @@ func (conn *FTAPIConnQot) OnReply(replyType FTAPI_ReqReplyType, protoHeader FTAP
 			rsp.RetType = &retType
 		}
 
-		conn.qotSpi.OnReply_GetIpoList(conn.FTAPIConn, serialNo, &rsp)
+		conn.qotSpi.OnReply_GetIpoList(conn, serialNo, &rsp)
 	}
 		break
 	case QOT_GETFUTUREINFO: {
@@ -920,13 +932,13 @@ func (conn *FTAPIConnQot) OnReply(replyType FTAPI_ReqReplyType, protoHeader FTAP
 			rsp.RetType = &retType
 		}
 
-		conn.qotSpi.OnReply_GetFutureInfo(conn.FTAPIConn, serialNo, &rsp)
+		conn.qotSpi.OnReply_GetFutureInfo(conn, serialNo, &rsp)
 	}
 		break
 	}
 }
 
-func (conn *FTAPIConnQot) OnPush(arg2 uintptr, arg3 FTAPI_ProtoHeader, arg4 string) {
+func (conn *FTAPIConnQotImpl) OnPush(arg2 uintptr, arg3 FTAPI_ProtoHeader, arg4 string) {
 	protoID := arg3.GetNProtoID()
 
 	if (conn.qotSpi == nil) {
@@ -942,7 +954,7 @@ func (conn *FTAPIConnQot) OnPush(arg2 uintptr, arg3 FTAPI_ProtoHeader, arg4 stri
 			retType = int32(Common.RetType_RetType_Invalid)
 			rsp.RetType = &retType
 		}
-		conn.qotSpi.OnPush_Notify(conn.FTAPIConn, &rsp)
+		conn.qotSpi.OnPush_Notify(conn, &rsp)
 	}
 		break
 	case QOT_UPDATEBASICQOT: {
@@ -952,7 +964,7 @@ func (conn *FTAPIConnQot) OnPush(arg2 uintptr, arg3 FTAPI_ProtoHeader, arg4 stri
 			retType = int32(Common.RetType_RetType_Invalid)
 			rsp.RetType = &retType
 		}
-		conn.qotSpi.OnPush_UpdateBasicQuote(conn.FTAPIConn, &rsp)
+		conn.qotSpi.OnPush_UpdateBasicQuote(conn, &rsp)
 	}
 		break
 	case QOT_UPDATEBROKER: {
@@ -962,7 +974,7 @@ func (conn *FTAPIConnQot) OnPush(arg2 uintptr, arg3 FTAPI_ProtoHeader, arg4 stri
 			retType = int32(Common.RetType_RetType_Invalid)
 			rsp.RetType = &retType
 		}
-		conn.qotSpi.OnPush_UpdateBroker(conn.FTAPIConn, &rsp)
+		conn.qotSpi.OnPush_UpdateBroker(conn, &rsp)
 	}
 		break
 	case QOT_UPDATEKL: {
@@ -972,7 +984,7 @@ func (conn *FTAPIConnQot) OnPush(arg2 uintptr, arg3 FTAPI_ProtoHeader, arg4 stri
 			retType = int32(Common.RetType_RetType_Invalid)
 			rsp.RetType = &retType
 		}
-		conn.qotSpi.OnPush_UpdateKL(conn.FTAPIConn, &rsp)
+		conn.qotSpi.OnPush_UpdateKL(conn, &rsp)
 	}
 		break
 	case QOT_UPDATEORDERBOOK: {
@@ -982,7 +994,7 @@ func (conn *FTAPIConnQot) OnPush(arg2 uintptr, arg3 FTAPI_ProtoHeader, arg4 stri
 			retType = int32(Common.RetType_RetType_Invalid)
 			rsp.RetType = &retType
 		}
-		conn.qotSpi.OnPush_UpdateOrderBook(conn.FTAPIConn, &rsp)
+		conn.qotSpi.OnPush_UpdateOrderBook(conn, &rsp)
 	}
 		break
 	case QOT_UPDATERT: {
@@ -992,7 +1004,7 @@ func (conn *FTAPIConnQot) OnPush(arg2 uintptr, arg3 FTAPI_ProtoHeader, arg4 stri
 			retType = int32(Common.RetType_RetType_Invalid)
 			rsp.RetType = &retType
 		}
-		conn.qotSpi.OnPush_UpdateRT(conn.FTAPIConn, &rsp)
+		conn.qotSpi.OnPush_UpdateRT(conn, &rsp)
 	}
 		break
 	case QOT_UPDATETICKER: {
@@ -1002,7 +1014,7 @@ func (conn *FTAPIConnQot) OnPush(arg2 uintptr, arg3 FTAPI_ProtoHeader, arg4 stri
 			retType = int32(Common.RetType_RetType_Invalid)
 			rsp.RetType = &retType
 		}
-		conn.qotSpi.OnPush_UpdateTicker(conn.FTAPIConn, &rsp)
+		conn.qotSpi.OnPush_UpdateTicker(conn, &rsp)
 	}
 		break
 	}
