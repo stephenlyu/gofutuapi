@@ -27,3 +27,7 @@ func MakeFloat32Pointer(v float32) *float32 {
 func MakeFloat64Pointer(v float64) *float64 {
 	return &v
 }
+
+func MakeBoolPointer(v bool) *bool {
+	return &v
+}
