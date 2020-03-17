@@ -1,0 +1,7 @@
+{
+  "private_key_file": "private_key.pem",
+  "client_info": "FTAPITest",
+  "ip": "127.0.0.1",
+  "port": 11111,
+  "user_id": 123456
+}
